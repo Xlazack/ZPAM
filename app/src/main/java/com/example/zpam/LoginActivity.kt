@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
@@ -54,6 +55,7 @@ class LoginActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     // Użytkownik został pomyślnie zalogowany
                     Log.d(TAG, "signInWithEmail:success")
+                    showToast("Udane Logowanie")
                     // Przejście do HomeActivity
                     val intent = Intent(this, HomeActivity::class.java)
                     startActivity(intent)
@@ -66,15 +68,15 @@ class LoginActivity : AppCompatActivity() {
                     when (task.exception) {
                         is FirebaseAuthInvalidUserException -> {
                             // Nieprawidłowy adres e-mail lub konto nie istnieje
-                            // Wyświetl odpowiednie komunikaty lub wykonaj odpowiednie działania
+                            showToast("Nieprawidłowy adres e-mail lub konto nie istnieje")
                         }
                         is FirebaseAuthInvalidCredentialsException -> {
                             // Nieprawidłowe hasło
-                            // Wyświetl odpowiednie komunikaty lub wykonaj odpowiednie działania
+                            showToast("Nieprawidłowe hasło")
                         }
                         else -> {
                             // Inny rodzaj błędu
-                            // Wyświetl odpowiednie komunikaty lub wykonaj odpowiednie działania
+                            showToast("Błąd przy logowaniu")
                         }
                     }
                 }
@@ -83,5 +85,9 @@ class LoginActivity : AppCompatActivity() {
 
     companion object {
         private const val TAG = "LoginActivity"
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }

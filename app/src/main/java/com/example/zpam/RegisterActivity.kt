@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 
@@ -57,6 +58,7 @@ class RegisterActivity : AppCompatActivity() {
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         // Użytkownik został pomyślnie zarejestrowany
+                        showToast("Użytkownik został pomyślnie zarejestrowany")
                         Log.d(TAG, "createUserWithEmail:success")
 
                         // Tutaj możesz wykonać dowolne czynności po rejestracji, np. przejście do kolejnego Activity
@@ -68,22 +70,25 @@ class RegisterActivity : AppCompatActivity() {
                         when (task.exception) {
                             is FirebaseAuthUserCollisionException -> {
                                 // Konto o podanym adresie e-mail już istnieje
-                                // Wyświetl odpowiednie komunikaty lub wykonaj odpowiednie działania
+                                showToast("Konto o podanym adresie e-mail już istnieje")
                             }
                             else -> {
                                 // Inny rodzaj błędu
-                                // Wyświetl odpowiednie komunikaty lub wykonaj odpowiednie działania
+                                showToast("Coś poszło nie tak")
                             }
                         }
                     }
                 }
         } else {
             // Hasło i potwierdzenie hasła nie pasują do siebie
-            // Wyświetl odpowiednie komunikaty lub wykonaj odpowiednie działania
+            showToast("Potwierdzenie hasła nie zgadza się z hasłem")
         }
     }
 
     companion object {
         private const val TAG = "RegisterActivity"
+    }
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
