@@ -4,4 +4,6 @@
     <string name="logowanie">Logowanie</string>
     <string name="email">Email</string>
     <string name="password">Hasło</string>
+    <string name="login">Zaloguj</string>
+    <string name="register">Zarejestruj</string>
 </resources>
