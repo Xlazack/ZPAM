@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ZPAM</string>
+    <string name="dane_osobowe">Dane Osobowe</string>
+    <string name="logowanie">Logowanie</string>
+    <string name="email">Email</string>
+    <string name="password">Hasło</string>
 </resources>
