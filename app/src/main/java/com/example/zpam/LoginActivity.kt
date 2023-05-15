@@ -54,8 +54,10 @@ class LoginActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     // Użytkownik został pomyślnie zalogowany
                     Log.d(TAG, "signInWithEmail:success")
-
-                    // Tutaj możesz wykonać dowolne czynności po zalogowaniu, np. przejście do kolejnego Activity
+                    // Przejście do HomeActivity
+                    val intent = Intent(this, HomeActivity::class.java)
+                    startActivity(intent)
+                    finish()
                 } else {
                     // W przypadku błędu logowania
                     Log.w(TAG, "signInWithEmail:failure", task.exception)
