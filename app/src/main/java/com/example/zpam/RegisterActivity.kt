@@ -21,6 +21,7 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var loginButton: Button
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var usernameEditText: EditText
+    private lateinit var firebaseReference: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +38,7 @@ class RegisterActivity : AppCompatActivity() {
 
         // Inicjalizacja instancji Firebase Auth
         firebaseAuth = FirebaseAuth.getInstance()
-        val firebase : DatabaseReference = FirebaseDatabase.getInstance().getReference("Users")
+        firebaseReference = FirebaseDatabase.getInstance().getReference("Users")
 
         // Obsługa kliknięcia przycisku rejestracji
         registerButton.setOnClickListener {
@@ -76,40 +77,29 @@ class RegisterActivity : AppCompatActivity() {
                                 if (updateProfileTask.isSuccessful) {
                                     // Pomyślnie zaktualizowano nazwę użytkownika
                                     // Możesz wykonać dodatkowe czynności po rejestracji, takie jak utworzenie pozycji w bazie danych itp.
+                                    showToast("Pomyślnie zaktualizowano nazwę użytkownika")
 
+                                    // Przekazanie danych do bazy danych Firebase
+                                    val userId = user.uid
+                                    showToast(userId)
+                                    val userReference = FirebaseDatabase.getInstance().reference
+                                        .child("users")
+                                        .child(userId)
+                                    val user = UserModel(userId, username, null, null, null, email, null)
+                                    firebaseReference.child(userId).setValue(user)
+                                        .addOnSuccessListener {
+                                            // Pomyślnie dodano dane do bazy danych
+                                            showToast("Pomyślnie zaktualizowano dane w bazie danych")
+                                        }
+                                        .addOnFailureListener { exception ->
+                                            // Wystąpił błąd podczas dodawania danych do bazy danych
+                                            showToast("Wystąpił błąd podczas aktualizowania danych w bazie danych")
+                                        }
                                 } else {
                                     // Wystąpił błąd podczas aktualizowania nazwy użytkownika
                                     // Obsłuż błąd odpowiednio
                                 }
                             }
-
-// Zarejestrowanie nasłuchiwacza autoryzacji
-//        FirebaseAuth.getInstance().addAuthStateListener { firebaseAuth ->
-                        val currentUser = firebaseAuth.currentUser
-                        if (currentUser != null) {
-                            // Użytkownik jest zalogowany
-                            val userId = currentUser.uid
-
-                            // Tworzenie nowej pozycji w bazie danych dla zalogowanego użytkownika
-                            val databaseReference = FirebaseDatabase.getInstance().reference.child("users").child(userId)
-                            val userObject = HashMap<String, Any>()
-                            userObject["username"] = currentUser.displayName ?: ""
-                            userObject["email"] = currentUser.email ?: ""
-                            // Dodaj inne właściwości użytkownika, jeśli są potrzebne
-
-                            databaseReference.setValue(userObject)
-                                .addOnSuccessListener {
-                                    // Dodawanie pozycji do bazy danych zakończone sukcesem
-                                    // Możesz wykonać dodatkowe czynności po zarejestrowaniu użytkownika
-                                    Toast.makeText(this, "Data inserted succesfully", Toast.LENGTH_LONG).show()
-                                }
-                                .addOnFailureListener { exception ->
-                                    // Wystąpił błąd podczas dodawania pozycji do bazy danych
-                                    // Obsłuż błąd odpowiednio
-                                    Toast.makeText(this, "Nie działa", Toast.LENGTH_LONG).show()
-                                }
-                        }
-//        }
 
                         val intent = Intent(this, LoginActivity::class.java)
                         startActivity(intent)

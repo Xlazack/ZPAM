@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "203734324475",
+    "firebase_url": "https://projekt-kotlin-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "projekt-kotlin",
     "storage_bucket": "projekt-kotlin.appspot.com"
   },
@@ -14,7 +15,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "203734324475-selj33paetuvvvi5jpm5vdfvbrqjhmb3.apps.googleusercontent.com",
+          "client_id": "203734324475-bdgc6bgjliknm7viupu30d7nrc37do5v.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -27,7 +28,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "203734324475-selj33paetuvvvi5jpm5vdfvbrqjhmb3.apps.googleusercontent.com",
+              "client_id": "203734324475-bdgc6bgjliknm7viupu30d7nrc37do5v.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
