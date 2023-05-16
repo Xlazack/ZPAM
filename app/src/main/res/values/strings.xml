@@ -6,4 +6,6 @@
     <string name="password">Hasło</string>
     <string name="login">Zaloguj</string>
     <string name="register">Zarejestruj</string>
+    <string name="personal_data">Dane osobowe</string>
+    <string name="address_data">Dane adresowe</string>
 </resources>
