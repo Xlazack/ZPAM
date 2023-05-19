@@ -15,12 +15,14 @@ class MainActivity : AppCompatActivity() {
         loginButton.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+            finish() //Zamienić gdy doda się wylogowywanie
         }
 
         val mainRegisterButton = findViewById<Button>(R.id.main_register_button)
         mainRegisterButton.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }
