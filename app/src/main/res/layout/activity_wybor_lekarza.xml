@@ -310,7 +310,7 @@
                     android:layout_width="75dp"
                     android:layout_height="100dp"
                     android:layout_marginEnd="250dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/view2"
+                    app:layout_constraintBottom_toBottomOf="@+id/view21"
                     app:layout_constraintEnd_toEndOf="@+id/view21"
                     app:layout_constraintStart_toStartOf="@+id/view21"
                     app:layout_constraintTop_toTopOf="@+id/view21"
