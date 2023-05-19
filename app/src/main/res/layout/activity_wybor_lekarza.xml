@@ -290,6 +290,260 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <view
+                    android:id="@+id/view21"
+                    class="androidx.appcompat.widget.LinearLayoutCompat"
+                    android:layout_width="361dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="75dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="250dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/view2"
+                    app:layout_constraintEnd_toEndOf="@+id/view21"
+                    app:layout_constraintStart_toStartOf="@+id/view21"
+                    app:layout_constraintTop_toTopOf="@+id/view21"
+                    app:layout_constraintVertical_bias="0.35"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <EditText
+                    android:id="@+id/editTextText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="110dp"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:text="Name"
+                    app:layout_constraintStart_toStartOf="@+id/view21"
+                    app:layout_constraintTop_toTopOf="@+id/view21" />
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="110dp"
+                    android:layout_marginTop="52dp"
+                    android:text="TextView"
+                    app:layout_constraintStart_toStartOf="@+id/view21"
+                    app:layout_constraintTop_toTopOf="@+id/view21" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginBottom="-3dp"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:rating="0"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5"
+                    android:stepSize="1"
+                    app:layout_constraintBottom_toBottomOf="@+id/view21"
+                    app:layout_constraintStart_toStartOf="@+id/view21" />
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="280dp"
+                    android:layout_marginTop="52dp"
+                    android:text="TextView"
+                    app:layout_constraintStart_toStartOf="@+id/view21"
+                    app:layout_constraintTop_toTopOf="@+id/view21" />
+
+                <TextView
+                    android:id="@+id/textView31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="280dp"
+                    android:layout_marginTop="82dp"
+                    android:text="TextView"
+                    app:layout_constraintStart_toStartOf="@+id/view21"
+                    app:layout_constraintTop_toTopOf="@+id/view21" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <view
+                    android:id="@+id/view41"
+                    class="androidx.appcompat.widget.LinearLayoutCompat"
+                    android:layout_width="361dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView21"
+                    android:layout_width="75dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="250dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/view41"
+                    app:layout_constraintEnd_toEndOf="@+id/view41"
+                    app:layout_constraintStart_toStartOf="@+id/view41"
+                    app:layout_constraintTop_toTopOf="@+id/view41"
+                    app:layout_constraintVertical_bias="0.35"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <EditText
+                    android:id="@+id/editTextText31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="110dp"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:text="Name"
+                    app:layout_constraintStart_toStartOf="@+id/view41"
+                    app:layout_constraintTop_toTopOf="@+id/view41" />
+
+                <TextView
+                    android:id="@+id/textView51"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="110dp"
+                    android:layout_marginTop="52dp"
+                    android:text="TextView"
+                    app:layout_constraintStart_toStartOf="@+id/view41"
+                    app:layout_constraintTop_toTopOf="@+id/view41" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginBottom="-3dp"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:rating="0"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5"
+                    android:stepSize="1"
+                    app:layout_constraintBottom_toBottomOf="@+id/view41"
+                    app:layout_constraintStart_toStartOf="@+id/view41" />
+
+                <TextView
+                    android:id="@+id/textView41"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="280dp"
+                    android:layout_marginTop="52dp"
+                    android:text="TextView2"
+                    app:layout_constraintStart_toStartOf="@+id/view41"
+                    app:layout_constraintTop_toTopOf="@+id/view41" />
+
+                <TextView
+                    android:id="@+id/textView61"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="280dp"
+                    android:layout_marginTop="82dp"
+                    android:text="TextView"
+                    app:layout_constraintStart_toStartOf="@+id/view41"
+                    app:layout_constraintTop_toTopOf="@+id/view41" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <view
+                    android:id="@+id/view81"
+                    class="androidx.appcompat.widget.LinearLayoutCompat"
+                    android:layout_width="361dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView41"
+                    android:layout_width="75dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="250dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/view81"
+                    app:layout_constraintEnd_toEndOf="@+id/view81"
+                    app:layout_constraintStart_toStartOf="@+id/view81"
+                    app:layout_constraintTop_toTopOf="@+id/view81"
+                    app:layout_constraintVertical_bias="0.35"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <EditText
+                    android:id="@+id/editTextText41"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="110dp"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:text="Name"
+                    app:layout_constraintStart_toStartOf="@+id/view81"
+                    app:layout_constraintTop_toTopOf="@+id/view81" />
+
+                <TextView
+                    android:id="@+id/textView361"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="110dp"
+                    android:layout_marginTop="52dp"
+                    android:text="TextView"
+                    app:layout_constraintStart_toStartOf="@+id/view81"
+                    app:layout_constraintTop_toTopOf="@+id/view81" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar41"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginBottom="-3dp"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:rating="0"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5"
+                    android:stepSize="1"
+                    app:layout_constraintBottom_toBottomOf="@+id/view81"
+                    app:layout_constraintStart_toStartOf="@+id/view81" />
+
+                <TextView
+                    android:id="@+id/textView81"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="280dp"
+                    android:layout_marginTop="52dp"
+                    android:text="TextView2"
+                    app:layout_constraintStart_toStartOf="@+id/view81"
+                    app:layout_constraintTop_toTopOf="@+id/view81" />
+
+                <TextView
+                    android:id="@+id/textView121"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="280dp"
+                    android:layout_marginTop="82dp"
+                    android:text="TextView"
+                    app:layout_constraintStart_toStartOf="@+id/view81"
+                    app:layout_constraintTop_toTopOf="@+id/view81" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
         </LinearLayout>
     </ScrollView>
