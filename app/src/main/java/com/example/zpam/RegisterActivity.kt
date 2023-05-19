@@ -83,9 +83,9 @@ class RegisterActivity : AppCompatActivity() {
                                     val userId = user.uid
                                     showToast(userId)
                                     val userReference = FirebaseDatabase.getInstance().reference
-                                        .child("users")
+                                        .child("Users")
                                         .child(userId)
-                                    val user = UserModel(userId, username, null, null, null, email, null)
+                                    val user = UserModel(null, null, null, null, email, null)
                                     firebaseReference.child(userId).setValue(user)
                                         .addOnSuccessListener {
                                             // Pomyślnie dodano dane do bazy danych
