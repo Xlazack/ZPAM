@@ -20,6 +20,11 @@ class UserDataActivity : AppCompatActivity() {
     private lateinit var firebaseReference: DatabaseReference
     private lateinit var nameEditText: EditText
     private lateinit var surnameEditText: EditText
+    private lateinit var dateOfBirthEditText: EditText
+    private lateinit var PESELEditText: EditText
+    private lateinit var emailEditText: EditText
+    private lateinit var phoneEditText: EditText
+    private lateinit var addressEditText: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,8 +37,13 @@ class UserDataActivity : AppCompatActivity() {
 
         nameEditText = findViewById(R.id.userData_name)
         surnameEditText = findViewById(R.id.userData_surname)
+        dateOfBirthEditText = findViewById(R.id.userData_dateOfBirth)
+        PESELEditText = findViewById(R.id.userData_PESEL)
+        emailEditText = findViewById(R.id.userData_email)
+        phoneEditText = findViewById(R.id.userData_phone)
+        addressEditText = findViewById(R.id.userData_address)
 
-        fetchUserDataFromFirebase(userId, userRef, nameEditText, surnameEditText)
+        fetchUserDataFromFirebase(userId, userRef, nameEditText, surnameEditText, dateOfBirthEditText, PESELEditText, emailEditText, phoneEditText, addressEditText)
 
         val backButton = findViewById<Button>(R.id.userData_backButton)
         backButton.setOnClickListener {
@@ -44,12 +54,12 @@ class UserDataActivity : AppCompatActivity() {
 
         val saveUserDataButton = findViewById<Button>(R.id.userData_saveButton)
         saveUserDataButton.setOnClickListener {
-            saveUserDataToFirebase(userRef, nameEditText, surnameEditText)
+            saveUserDataToFirebase(userRef, nameEditText, surnameEditText, dateOfBirthEditText, PESELEditText, emailEditText, phoneEditText, addressEditText)
         }
     }
 }
 
-private fun fetchUserDataFromFirebase(userId:String, userRef: DatabaseReference, nameEditText: EditText, surnameEditText: EditText) {
+private fun fetchUserDataFromFirebase(userId:String, userRef: DatabaseReference, name: EditText, surname: EditText, dateOfBirth: EditText, PESEL: EditText, email: EditText, phone: EditText, address: EditText) {
     val userReference = FirebaseDatabase.getInstance().reference
         .child("Users")
         .child(userId)
@@ -59,8 +69,13 @@ private fun fetchUserDataFromFirebase(userId:String, userRef: DatabaseReference,
             if (dataSnapshot.exists()) {
                 val userData = dataSnapshot.getValue(UserModel::class.java)
                 userData?.let { user ->
-                    nameEditText.setText(user.userName)
-                    surnameEditText.setText(user.userSurname)
+                    name.setText(user.userName)
+                    surname.setText(user.userSurname)
+                    dateOfBirth.setText(user.userBirthDate)
+                    PESEL.setText(user.userPesel)
+                    email.setText(user.userEmail)
+                    phone.setText(user.userPhone)
+                    address.setText(user.userAddress)
                     // Assign values to other fields accordingly
                 }
             }
@@ -71,13 +86,18 @@ private fun fetchUserDataFromFirebase(userId:String, userRef: DatabaseReference,
         }
     })
 }
-private fun saveUserDataToFirebase(userRef: DatabaseReference, nameEditText: EditText, surnameEditText: EditText) {
+private fun saveUserDataToFirebase(userRef: DatabaseReference, name: EditText, surname: EditText, dateOfBirth: EditText, PESEL: EditText, email: EditText, phone: EditText, address: EditText) {
 
-    val name = nameEditText.text.toString()
-    val surname = surnameEditText.text.toString()
+    val name = name.text.toString()
+    val surname = surname.text.toString()
+    val dateOfBirth = dateOfBirth.text.toString()
+    val PESEL = PESEL.text.toString()
+    val email = email.text.toString()
+    val phone = phone.text.toString()
+    val address = address.text.toString()
     // Get values from other fields
 
-    val userData = UserModel(name, surname, /* other values */)
+    val userData = UserModel(name, surname, dateOfBirth, PESEL, email, phone, address/* other values */)
     userRef.setValue(userData)
         .addOnSuccessListener {
             // Data saved successfully

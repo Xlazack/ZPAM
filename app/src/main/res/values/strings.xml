@@ -15,4 +15,6 @@
     <string name="phone_number">nr Telefonu</string>
     <string name="Address">Adres pocztowy</string>
     <string name="save">Zapisz</string>
+    <string name="repeat_passowrd">Powtórz hasło</string>
+    <string name="back_to_login">Powrót do logowania</string>
 </resources>

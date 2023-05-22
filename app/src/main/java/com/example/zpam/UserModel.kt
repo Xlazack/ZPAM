@@ -4,9 +4,10 @@ data class UserModel(
     var userName: String? = null,
     var userSurname: String? = null,
     var userBirthDate: String? = null,
-    var userPesel: Long? = null,
+    var userPesel: String? = null,
     var userEmail: String? = null,
-    var userPhone: Long? = null
+    var userPhone: String? = null,
+    var userAddress: String? = null
 ) {
 
 }
