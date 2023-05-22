@@ -29,7 +29,7 @@ class RegisterActivity : AppCompatActivity() {
 
         // Inicjalizacja obiektów widoku
         emailEditText = findViewById(R.id.register_emailAddress_text)
-        usernameEditText = findViewById(R.id.register_Name_text)
+        //usernameEditText = findViewById(R.id.register_Name_text)
         passwordEditText = findViewById(R.id.register_Password_text)
         confirmPasswordEditText = findViewById(R.id.register_repeatPassword_text)
         registerButton = findViewById(R.id.register_registerButton)
@@ -47,7 +47,7 @@ class RegisterActivity : AppCompatActivity() {
             val password = passwordEditText.text.toString()
             val confirmPassword = confirmPasswordEditText.text.toString()
 
-            registerUser(email, username, password, confirmPassword)
+            registerUser(email, null, password, confirmPassword)
         }
 
         // Obsługa kliknięcia przycisku Zaloguj
@@ -57,7 +57,7 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    private fun registerUser(email: String, username: String, password: String, confirmPassword: String) {
+    private fun registerUser(email: String, username: String?, password: String, confirmPassword: String) {
         if (password == confirmPassword) {
             firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
