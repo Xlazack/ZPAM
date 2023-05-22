@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_purple_flower"
+    tools:context=".SettingsActivity">
+
+    <Button
+        android:id="@+id/settings_backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Powrót"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <view
+        android:id="@+id/view"
+        class="androidx.appcompat.widget.SearchView"
+        android:layout_width="52dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <view
+                    android:id="@+id/view5"
+                    class="androidx.appcompat.widget.LinearLayoutCompat"
+                    android:layout_width="361dp"
+                    android:layout_height="540dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@color/purple"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <view
+                    android:id="@+id/view2"
+                    class="androidx.appcompat.widget.LinearLayoutCompat"
+                    android:layout_width="361dp"
+                    android:layout_height="230dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="75dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="250dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/view2"
+                    app:layout_constraintEnd_toEndOf="@+id/view2"
+                    app:layout_constraintStart_toStartOf="@+id/view2"
+                    app:layout_constraintTop_toTopOf="@+id/view2"
+                    app:layout_constraintVertical_bias="0.045"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <EditText
+                    android:id="@+id/userData_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="108dp"
+                    android:layout_marginTop="16dp"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:text="Name"
+                    app:layout_constraintStart_toStartOf="@+id/view2"
+                    app:layout_constraintTop_toTopOf="@+id/view2" />
+
+                <EditText
+                    android:id="@+id/Dolegliwosci"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="108dp"
+                    android:layout_marginTop="68dp"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:text="Dolegliwosci"
+                    app:layout_constraintStart_toStartOf="@+id/view2"
+                    app:layout_constraintTop_toTopOf="@+id/view2" />
+
+                <TextView
+                    android:id="@+id/bolace_gardlo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="108dp"
+                    android:layout_marginTop="156dp"
+                    android:text="bolące gardło"
+                    app:layout_constraintStart_toStartOf="@+id/view2"
+                    app:layout_constraintTop_toTopOf="@+id/view2" />
+
+                <TextView
+                    android:id="@+id/kaszel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="108dp"
+                    android:layout_marginTop="128dp"
+                    android:text="suchy kaszel"
+                    app:layout_constraintStart_toStartOf="@+id/view2"
+                    app:layout_constraintTop_toTopOf="@+id/view2" />
+
+                <TextView
+                    android:id="@+id/katar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="108dp"
+                    android:layout_marginTop="184dp"
+                    android:text="katar"
+                    app:layout_constraintStart_toStartOf="@+id/view2"
+                    app:layout_constraintTop_toTopOf="@+id/view2" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginBottom="404dp"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:rating="0"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5"
+                    android:stepSize="1"
+                    app:layout_constraintBottom_toBottomOf="@+id/view2"
+                    app:layout_constraintStart_toStartOf="@+id/view2" />
+
+                <org.osmdroid.views.MapView
+                    android:id="@+id/mapView"
+                    titlesource="MAPNIK"
+                    android:layout_width="302dp"
+                    android:layout_height="134dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/view5"
+                    app:layout_constraintEnd_toEndOf="@+id/view5"
+                    app:layout_constraintHorizontal_bias="0.491"
+                    app:layout_constraintStart_toStartOf="@+id/view5"
+                    app:layout_constraintTop_toTopOf="@+id/view5"
+                    app:layout_constraintVertical_bias="0.633" />
+
+                <view
+                    android:id="@+id/viewData"
+                    class="androidx.appcompat.widget.LinearLayoutCompat"
+                    android:layout_width="127dp"
+                    android:layout_height="58dp"
+                    android:layout_marginEnd="28dp"
+                    android:background="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/view5"
+                    app:layout_constraintEnd_toEndOf="@+id/view5"
+                    app:layout_constraintTop_toTopOf="@+id/view5"
+                    app:layout_constraintVertical_bias="0.939" />
+
+                <view
+                    android:id="@+id/viewKwota"
+                    class="androidx.appcompat.widget.LinearLayoutCompat"
+                    android:layout_width="127dp"
+                    android:layout_height="58dp"
+                    android:background="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/view5"
+                    app:layout_constraintEnd_toStartOf="@+id/viewData"
+                    app:layout_constraintHorizontal_bias="0.367"
+                    app:layout_constraintStart_toStartOf="@+id/view5"
+                    app:layout_constraintTop_toTopOf="@+id/view5"
+                    app:layout_constraintVertical_bias="0.939" />
+
+                <TextView
+                    android:id="@+id/data"
+                    android:layout_width="94dp"
+                    android:layout_height="30dp"
+                    android:text="12.05.2023"
+                    android:gravity="center"
+                    app:layout_constraintBottom_toBottomOf="@+id/viewKwota"
+                    app:layout_constraintEnd_toEndOf="@+id/viewKwota"
+                    app:layout_constraintStart_toStartOf="@+id/viewKwota"
+                    app:layout_constraintTop_toTopOf="@+id/viewKwota" />
+
+                <TextView
+                    android:id="@+id/cena"
+                    android:layout_width="94dp"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="500 zł"
+                    app:layout_constraintBottom_toBottomOf="@+id/viewData"
+                    app:layout_constraintEnd_toEndOf="@+id/viewData"
+                    app:layout_constraintStart_toStartOf="@+id/viewData"
+                    app:layout_constraintTop_toTopOf="@+id/viewData" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
