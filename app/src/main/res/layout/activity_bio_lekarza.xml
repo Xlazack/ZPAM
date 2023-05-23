@@ -30,7 +30,7 @@
                 android:layout_height="match_parent">
 
                 <view
-                    android:id="@+id/view2"
+                    android:id="@+id/okno_1"
                     class="androidx.appcompat.widget.LinearLayoutCompat"
                     android:layout_width="361dp"
                     android:layout_height="540dp"
@@ -41,19 +41,19 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/zdjecie_1"
                     android:layout_width="75dp"
                     android:layout_height="100dp"
                     android:layout_marginEnd="250dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/view2"
-                    app:layout_constraintEnd_toEndOf="@+id/view2"
-                    app:layout_constraintStart_toStartOf="@+id/view2"
-                    app:layout_constraintTop_toTopOf="@+id/view2"
+                    app:layout_constraintBottom_toBottomOf="@+id/okno_1"
+                    app:layout_constraintEnd_toEndOf="@+id/okno_1"
+                    app:layout_constraintStart_toStartOf="@+id/okno_1"
+                    app:layout_constraintTop_toTopOf="@+id/okno_1"
                     app:layout_constraintVertical_bias="0.045"
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <EditText
-                    android:id="@+id/userData_name"
+                    android:id="@+id/Imie_i_nazwisko_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="108dp"
@@ -61,21 +61,21 @@
                     android:ems="10"
                     android:inputType="text"
                     android:text="Name"
-                    app:layout_constraintStart_toStartOf="@+id/view2"
-                    app:layout_constraintTop_toTopOf="@+id/view2" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_1"
+                    app:layout_constraintTop_toTopOf="@+id/okno_1" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/specjalizacja_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="108dp"
                     android:layout_marginTop="68dp"
                     android:text="TextView"
-                    app:layout_constraintStart_toStartOf="@+id/view2"
-                    app:layout_constraintTop_toTopOf="@+id/view2" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_1"
+                    app:layout_constraintTop_toTopOf="@+id/okno_1" />
 
                 <RatingBar
-                    android:id="@+id/ratingBar"
+                    android:id="@+id/rating_bar_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="44dp"
@@ -86,28 +86,28 @@
                     android:scaleX="0.5"
                     android:scaleY="0.5"
                     android:stepSize="1"
-                    app:layout_constraintBottom_toBottomOf="@+id/view2"
-                    app:layout_constraintStart_toStartOf="@+id/view2" />
+                    app:layout_constraintBottom_toBottomOf="@+id/okno_1"
+                    app:layout_constraintStart_toStartOf="@+id/okno_1" />
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/adres_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="280dp"
                     android:layout_marginTop="68dp"
                     android:text="TextView"
-                    app:layout_constraintStart_toStartOf="@+id/view2"
-                    app:layout_constraintTop_toTopOf="@+id/view2" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_1"
+                    app:layout_constraintTop_toTopOf="@+id/okno_1" />
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/odleglosc_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="280dp"
                     android:layout_marginTop="100dp"
                     android:text="TextView"
-                    app:layout_constraintStart_toStartOf="@+id/view2"
-                    app:layout_constraintTop_toTopOf="@+id/view2" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_1"
+                    app:layout_constraintTop_toTopOf="@+id/okno_1" />
 
 
                 <EditText
@@ -118,11 +118,11 @@
                     android:gravity="center"
                     android:inputType="textMultiLine"
                     android:text="Wybitny polski okulista z 25 letnim doświadczeniem. Studiował w Pradze, Berlinie i Londynie. Jego prace naukowe i badawcze znaczaco przyczyniły się do rozwoju medycyny. Specjalista od wrodzonych wad wzroku oraz chorób nabytych."
-                    app:layout_constraintBottom_toBottomOf="@+id/view2"
-                    app:layout_constraintEnd_toEndOf="@+id/view2"
+                    app:layout_constraintBottom_toBottomOf="@+id/okno_1"
+                    app:layout_constraintEnd_toEndOf="@+id/okno_1"
                     app:layout_constraintHorizontal_bias="0.494"
-                    app:layout_constraintStart_toStartOf="@+id/view2"
-                    app:layout_constraintTop_toTopOf="@+id/view2"
+                    app:layout_constraintStart_toStartOf="@+id/okno_1"
+                    app:layout_constraintTop_toTopOf="@+id/okno_1"
                     app:layout_constraintVertical_bias="0.469" />
 
                 <EditText
@@ -132,11 +132,11 @@
                     android:ems="10"
                     android:inputType="text"
                     android:text="Cena wizyty: 500 zł"
-                    app:layout_constraintBottom_toBottomOf="@+id/view2"
-                    app:layout_constraintEnd_toEndOf="@+id/view2"
+                    app:layout_constraintBottom_toBottomOf="@+id/okno_1"
+                    app:layout_constraintEnd_toEndOf="@+id/okno_1"
                     app:layout_constraintHorizontal_bias="0.496"
-                    app:layout_constraintStart_toStartOf="@+id/view2"
-                    app:layout_constraintTop_toTopOf="@+id/view2"
+                    app:layout_constraintStart_toStartOf="@+id/okno_1"
+                    app:layout_constraintTop_toTopOf="@+id/okno_1"
                     app:layout_constraintVertical_bias="0.84" />
 
                 <Button
@@ -145,10 +145,10 @@
                     android:layout_height="wrap_content"
                     android:text="SPRAWDZ TERMINY"
                     android:backgroundTint="@android:color/holo_green_dark"
-                    app:layout_constraintBottom_toBottomOf="@+id/view2"
-                    app:layout_constraintEnd_toEndOf="@+id/view2"
-                    app:layout_constraintStart_toStartOf="@+id/view2"
-                    app:layout_constraintTop_toTopOf="@+id/view2"
+                    app:layout_constraintBottom_toBottomOf="@+id/okno_1"
+                    app:layout_constraintEnd_toEndOf="@+id/okno_1"
+                    app:layout_constraintStart_toStartOf="@+id/okno_1"
+                    app:layout_constraintTop_toTopOf="@+id/okno_1"
                     app:layout_constraintVertical_bias="0.975" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

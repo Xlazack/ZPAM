@@ -3,7 +3,6 @@ package com.example.zpam
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.ContactsContract.Data
 import android.widget.Button
 import android.widget.EditText
 import com.google.firebase.auth.FirebaseAuth
@@ -12,7 +11,6 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import java.util.logging.Logger.global
 
 class UserDataActivity : AppCompatActivity() {
 
@@ -35,7 +33,7 @@ class UserDataActivity : AppCompatActivity() {
         val userId = user!!.uid
         val userRef = FirebaseDatabase.getInstance().getReference("Users").child(userId)
 
-        nameEditText = findViewById(R.id.userData_name)
+        nameEditText = findViewById(R.id.Imie_i_nazwisko_1)
         surnameEditText = findViewById(R.id.userData_surname)
         dateOfBirthEditText = findViewById(R.id.userData_dateOfBirth)
         PESELEditText = findViewById(R.id.userData_PESEL)

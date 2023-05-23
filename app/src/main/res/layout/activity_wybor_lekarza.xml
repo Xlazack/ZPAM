@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <view
-        android:id="@+id/view"
+        android:id="@+id/Search"
         class="androidx.appcompat.widget.SearchView"
         android:layout_width="52dp"
         android:layout_height="50dp"
@@ -42,7 +42,7 @@
                 android:layout_height="match_parent">
 
                 <View
-                    android:id="@+id/view2"
+                    android:id="@+id/okno_1"
                     class="androidx.appcompat.widget.LinearLayoutCompat"
                     android:layout_width="361dp"
                     android:layout_height="120dp"
@@ -53,40 +53,40 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/zdjecie_1"
                     android:layout_width="75dp"
                     android:layout_height="100dp"
                     android:layout_marginEnd="250dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/view2"
-                    app:layout_constraintEnd_toEndOf="@+id/view2"
-                    app:layout_constraintStart_toStartOf="@+id/view2"
-                    app:layout_constraintTop_toTopOf="@+id/view2"
+                    app:layout_constraintBottom_toBottomOf="@+id/okno_1"
+                    app:layout_constraintEnd_toEndOf="@+id/okno_1"
+                    app:layout_constraintStart_toStartOf="@+id/okno_1"
+                    app:layout_constraintTop_toTopOf="@+id/okno_1"
                     app:layout_constraintVertical_bias="0.35"
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <EditText
-                    android:id="@+id/userData_name"
+                    android:id="@+id/Imie_i_nazwisko_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="110dp"
                     android:ems="10"
                     android:inputType="text"
                     android:text="Name"
-                    app:layout_constraintStart_toStartOf="@+id/view2"
-                    app:layout_constraintTop_toTopOf="@+id/view2" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_1"
+                    app:layout_constraintTop_toTopOf="@+id/okno_1" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/specjalizacja_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="110dp"
                     android:layout_marginTop="52dp"
                     android:text="TextView"
-                    app:layout_constraintStart_toStartOf="@+id/view2"
-                    app:layout_constraintTop_toTopOf="@+id/view2" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_1"
+                    app:layout_constraintTop_toTopOf="@+id/okno_1" />
 
                 <RatingBar
-                    android:id="@+id/ratingBar"
+                    android:id="@+id/rating_bar_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="48dp"
@@ -97,28 +97,28 @@
                     android:scaleX="0.5"
                     android:scaleY="0.5"
                     android:stepSize="1"
-                    app:layout_constraintBottom_toBottomOf="@+id/view2"
-                    app:layout_constraintStart_toStartOf="@+id/view2" />
+                    app:layout_constraintBottom_toBottomOf="@+id/okno_1"
+                    app:layout_constraintStart_toStartOf="@+id/okno_1" />
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/adres_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="280dp"
                     android:layout_marginTop="52dp"
                     android:text="TextView"
-                    app:layout_constraintStart_toStartOf="@+id/view2"
-                    app:layout_constraintTop_toTopOf="@+id/view2" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_1"
+                    app:layout_constraintTop_toTopOf="@+id/okno_1" />
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/odleglosc_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="280dp"
                     android:layout_marginTop="82dp"
                     android:text="TextView"
-                    app:layout_constraintStart_toStartOf="@+id/view2"
-                    app:layout_constraintTop_toTopOf="@+id/view2" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_1"
+                    app:layout_constraintTop_toTopOf="@+id/okno_1" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -126,7 +126,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <view
-                    android:id="@+id/view4"
+                    android:id="@+id/okno_2"
                     class="androidx.appcompat.widget.LinearLayoutCompat"
                     android:layout_width="361dp"
                     android:layout_height="120dp"
@@ -137,40 +137,40 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/zdjecie_2"
                     android:layout_width="75dp"
                     android:layout_height="100dp"
                     android:layout_marginEnd="250dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/view4"
-                    app:layout_constraintEnd_toEndOf="@+id/view4"
-                    app:layout_constraintStart_toStartOf="@+id/view4"
-                    app:layout_constraintTop_toTopOf="@+id/view4"
+                    app:layout_constraintBottom_toBottomOf="@+id/okno_2"
+                    app:layout_constraintEnd_toEndOf="@+id/okno_2"
+                    app:layout_constraintStart_toStartOf="@+id/okno_2"
+                    app:layout_constraintTop_toTopOf="@+id/okno_2"
                     app:layout_constraintVertical_bias="0.35"
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <EditText
-                    android:id="@+id/editTextText3"
+                    android:id="@+id/imie_i_nazwisko_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="110dp"
                     android:ems="10"
                     android:inputType="text"
                     android:text="Name"
-                    app:layout_constraintStart_toStartOf="@+id/view4"
-                    app:layout_constraintTop_toTopOf="@+id/view4" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_2"
+                    app:layout_constraintTop_toTopOf="@+id/okno_2" />
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/specjalizacja_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="110dp"
                     android:layout_marginTop="52dp"
                     android:text="TextView"
-                    app:layout_constraintStart_toStartOf="@+id/view4"
-                    app:layout_constraintTop_toTopOf="@+id/view4" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_2"
+                    app:layout_constraintTop_toTopOf="@+id/okno_2" />
 
                 <RatingBar
-                    android:id="@+id/ratingBar2"
+                    android:id="@+id/rating_bar_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="48dp"
@@ -181,28 +181,28 @@
                     android:scaleX="0.5"
                     android:scaleY="0.5"
                     android:stepSize="1"
-                    app:layout_constraintBottom_toBottomOf="@+id/view4"
-                    app:layout_constraintStart_toStartOf="@+id/view4" />
+                    app:layout_constraintBottom_toBottomOf="@+id/okno_2"
+                    app:layout_constraintStart_toStartOf="@+id/okno_2" />
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/adres_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="280dp"
                     android:layout_marginTop="52dp"
                     android:text="TextView2"
-                    app:layout_constraintStart_toStartOf="@+id/view4"
-                    app:layout_constraintTop_toTopOf="@+id/view4" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_2"
+                    app:layout_constraintTop_toTopOf="@+id/okno_2" />
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/odleglosc_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="280dp"
                     android:layout_marginTop="82dp"
                     android:text="TextView"
-                    app:layout_constraintStart_toStartOf="@+id/view4"
-                    app:layout_constraintTop_toTopOf="@+id/view4" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_2"
+                    app:layout_constraintTop_toTopOf="@+id/okno_2" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -210,7 +210,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <view
-                    android:id="@+id/view8"
+                    android:id="@+id/okno_3"
                     class="androidx.appcompat.widget.LinearLayoutCompat"
                     android:layout_width="361dp"
                     android:layout_height="120dp"
@@ -221,40 +221,40 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/imageView4"
+                    android:id="@+id/zdjecie_3"
                     android:layout_width="75dp"
                     android:layout_height="100dp"
                     android:layout_marginEnd="250dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/view8"
-                    app:layout_constraintEnd_toEndOf="@+id/view8"
-                    app:layout_constraintStart_toStartOf="@+id/view8"
-                    app:layout_constraintTop_toTopOf="@+id/view8"
+                    app:layout_constraintBottom_toBottomOf="@+id/okno_3"
+                    app:layout_constraintEnd_toEndOf="@+id/okno_3"
+                    app:layout_constraintStart_toStartOf="@+id/okno_3"
+                    app:layout_constraintTop_toTopOf="@+id/okno_3"
                     app:layout_constraintVertical_bias="0.35"
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <EditText
-                    android:id="@+id/editTextText4"
+                    android:id="@+id/imie_i_nazwisko_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="110dp"
                     android:ems="10"
                     android:inputType="text"
                     android:text="Name"
-                    app:layout_constraintStart_toStartOf="@+id/view8"
-                    app:layout_constraintTop_toTopOf="@+id/view8" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_3"
+                    app:layout_constraintTop_toTopOf="@+id/okno_3" />
 
                 <TextView
-                    android:id="@+id/textView36"
+                    android:id="@+id/specjalizacja_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="110dp"
                     android:layout_marginTop="52dp"
                     android:text="TextView"
-                    app:layout_constraintStart_toStartOf="@+id/view8"
-                    app:layout_constraintTop_toTopOf="@+id/view8" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_3"
+                    app:layout_constraintTop_toTopOf="@+id/okno_3" />
 
                 <RatingBar
-                    android:id="@+id/ratingBar4"
+                    android:id="@+id/rating_bar_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="48dp"
@@ -265,28 +265,28 @@
                     android:scaleX="0.5"
                     android:scaleY="0.5"
                     android:stepSize="1"
-                    app:layout_constraintBottom_toBottomOf="@+id/view8"
-                    app:layout_constraintStart_toStartOf="@+id/view8" />
+                    app:layout_constraintBottom_toBottomOf="@+id/okno_3"
+                    app:layout_constraintStart_toStartOf="@+id/okno_3" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/adres_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="280dp"
                     android:layout_marginTop="52dp"
                     android:text="TextView2"
-                    app:layout_constraintStart_toStartOf="@+id/view8"
-                    app:layout_constraintTop_toTopOf="@+id/view8" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_3"
+                    app:layout_constraintTop_toTopOf="@+id/okno_3" />
 
                 <TextView
-                    android:id="@+id/textView12"
+                    android:id="@+id/odleglosc_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="280dp"
                     android:layout_marginTop="82dp"
                     android:text="TextView"
-                    app:layout_constraintStart_toStartOf="@+id/view8"
-                    app:layout_constraintTop_toTopOf="@+id/view8" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_3"
+                    app:layout_constraintTop_toTopOf="@+id/okno_3" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -295,7 +295,7 @@
                 android:layout_height="match_parent">
 
                 <view
-                    android:id="@+id/view21"
+                    android:id="@+id/okno_4"
                     class="androidx.appcompat.widget.LinearLayoutCompat"
                     android:layout_width="361dp"
                     android:layout_height="120dp"
@@ -306,40 +306,40 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/imageView1"
+                    android:id="@+id/zdjecie_4"
                     android:layout_width="75dp"
                     android:layout_height="100dp"
                     android:layout_marginEnd="250dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/view21"
-                    app:layout_constraintEnd_toEndOf="@+id/view21"
-                    app:layout_constraintStart_toStartOf="@+id/view21"
-                    app:layout_constraintTop_toTopOf="@+id/view21"
+                    app:layout_constraintBottom_toBottomOf="@+id/okno_4"
+                    app:layout_constraintEnd_toEndOf="@+id/okno_4"
+                    app:layout_constraintStart_toStartOf="@+id/okno_4"
+                    app:layout_constraintTop_toTopOf="@+id/okno_4"
                     app:layout_constraintVertical_bias="0.35"
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <EditText
-                    android:id="@+id/editTextText1"
+                    android:id="@+id/imie_i_nazwisko_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="110dp"
                     android:ems="10"
                     android:inputType="text"
                     android:text="Name"
-                    app:layout_constraintStart_toStartOf="@+id/view21"
-                    app:layout_constraintTop_toTopOf="@+id/view21" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_4"
+                    app:layout_constraintTop_toTopOf="@+id/okno_4" />
 
                 <TextView
-                    android:id="@+id/textView1"
+                    android:id="@+id/specjalizacja_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="110dp"
                     android:layout_marginTop="52dp"
                     android:text="TextView"
-                    app:layout_constraintStart_toStartOf="@+id/view21"
-                    app:layout_constraintTop_toTopOf="@+id/view21" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_4"
+                    app:layout_constraintTop_toTopOf="@+id/okno_4" />
 
                 <RatingBar
-                    android:id="@+id/ratingBar1"
+                    android:id="@+id/rating_bar_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="48dp"
@@ -350,28 +350,28 @@
                     android:scaleX="0.5"
                     android:scaleY="0.5"
                     android:stepSize="1"
-                    app:layout_constraintBottom_toBottomOf="@+id/view21"
-                    app:layout_constraintStart_toStartOf="@+id/view21" />
+                    app:layout_constraintBottom_toBottomOf="@+id/okno_4"
+                    app:layout_constraintStart_toStartOf="@+id/okno_4" />
 
                 <TextView
-                    android:id="@+id/textView21"
+                    android:id="@+id/adres_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="280dp"
                     android:layout_marginTop="52dp"
                     android:text="TextView"
-                    app:layout_constraintStart_toStartOf="@+id/view21"
-                    app:layout_constraintTop_toTopOf="@+id/view21" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_4"
+                    app:layout_constraintTop_toTopOf="@+id/okno_4" />
 
                 <TextView
-                    android:id="@+id/textView31"
+                    android:id="@+id/odleglosc_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="280dp"
                     android:layout_marginTop="82dp"
                     android:text="TextView"
-                    app:layout_constraintStart_toStartOf="@+id/view21"
-                    app:layout_constraintTop_toTopOf="@+id/view21" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_4"
+                    app:layout_constraintTop_toTopOf="@+id/okno_4" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -379,7 +379,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <view
-                    android:id="@+id/view41"
+                    android:id="@+id/okno_5"
                     class="androidx.appcompat.widget.LinearLayoutCompat"
                     android:layout_width="361dp"
                     android:layout_height="120dp"
@@ -390,40 +390,40 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/imageView21"
+                    android:id="@+id/zdjecie_5"
                     android:layout_width="75dp"
                     android:layout_height="100dp"
                     android:layout_marginEnd="250dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/view41"
-                    app:layout_constraintEnd_toEndOf="@+id/view41"
-                    app:layout_constraintStart_toStartOf="@+id/view41"
-                    app:layout_constraintTop_toTopOf="@+id/view41"
+                    app:layout_constraintBottom_toBottomOf="@+id/okno_5"
+                    app:layout_constraintEnd_toEndOf="@+id/okno_5"
+                    app:layout_constraintStart_toStartOf="@+id/okno_5"
+                    app:layout_constraintTop_toTopOf="@+id/okno_5"
                     app:layout_constraintVertical_bias="0.35"
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <EditText
-                    android:id="@+id/editTextText31"
+                    android:id="@+id/imie_i_nazwisko_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="110dp"
                     android:ems="10"
                     android:inputType="text"
                     android:text="Name"
-                    app:layout_constraintStart_toStartOf="@+id/view41"
-                    app:layout_constraintTop_toTopOf="@+id/view41" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_5"
+                    app:layout_constraintTop_toTopOf="@+id/okno_5" />
 
                 <TextView
-                    android:id="@+id/textView51"
+                    android:id="@+id/specjalizacja_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="110dp"
                     android:layout_marginTop="52dp"
                     android:text="TextView"
-                    app:layout_constraintStart_toStartOf="@+id/view41"
-                    app:layout_constraintTop_toTopOf="@+id/view41" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_5"
+                    app:layout_constraintTop_toTopOf="@+id/okno_5" />
 
                 <RatingBar
-                    android:id="@+id/ratingBar21"
+                    android:id="@+id/rating_bar_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="48dp"
@@ -434,28 +434,28 @@
                     android:scaleX="0.5"
                     android:scaleY="0.5"
                     android:stepSize="1"
-                    app:layout_constraintBottom_toBottomOf="@+id/view41"
-                    app:layout_constraintStart_toStartOf="@+id/view41" />
+                    app:layout_constraintBottom_toBottomOf="@+id/okno_5"
+                    app:layout_constraintStart_toStartOf="@+id/okno_5" />
 
                 <TextView
-                    android:id="@+id/textView41"
+                    android:id="@+id/adres_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="280dp"
                     android:layout_marginTop="52dp"
                     android:text="TextView2"
-                    app:layout_constraintStart_toStartOf="@+id/view41"
-                    app:layout_constraintTop_toTopOf="@+id/view41" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_5"
+                    app:layout_constraintTop_toTopOf="@+id/okno_5" />
 
                 <TextView
-                    android:id="@+id/textView61"
+                    android:id="@+id/odleglosc_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="280dp"
                     android:layout_marginTop="82dp"
                     android:text="TextView"
-                    app:layout_constraintStart_toStartOf="@+id/view41"
-                    app:layout_constraintTop_toTopOf="@+id/view41" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_5"
+                    app:layout_constraintTop_toTopOf="@+id/okno_5" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -463,7 +463,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <view
-                    android:id="@+id/view81"
+                    android:id="@+id/okno_6"
                     class="androidx.appcompat.widget.LinearLayoutCompat"
                     android:layout_width="361dp"
                     android:layout_height="120dp"
@@ -474,40 +474,40 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/imageView41"
+                    android:id="@+id/zdjecie_6"
                     android:layout_width="75dp"
                     android:layout_height="100dp"
                     android:layout_marginEnd="250dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/view81"
-                    app:layout_constraintEnd_toEndOf="@+id/view81"
-                    app:layout_constraintStart_toStartOf="@+id/view81"
-                    app:layout_constraintTop_toTopOf="@+id/view81"
+                    app:layout_constraintBottom_toBottomOf="@+id/okno_6"
+                    app:layout_constraintEnd_toEndOf="@+id/okno_6"
+                    app:layout_constraintStart_toStartOf="@+id/okno_6"
+                    app:layout_constraintTop_toTopOf="@+id/okno_6"
                     app:layout_constraintVertical_bias="0.35"
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <EditText
-                    android:id="@+id/editTextText41"
+                    android:id="@+id/imie_i_nazwisko_6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="110dp"
                     android:ems="10"
                     android:inputType="text"
                     android:text="Name"
-                    app:layout_constraintStart_toStartOf="@+id/view81"
-                    app:layout_constraintTop_toTopOf="@+id/view81" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_6"
+                    app:layout_constraintTop_toTopOf="@+id/okno_6" />
 
                 <TextView
-                    android:id="@+id/textView361"
+                    android:id="@+id/specjalizacja_6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="110dp"
                     android:layout_marginTop="52dp"
                     android:text="TextView"
-                    app:layout_constraintStart_toStartOf="@+id/view81"
-                    app:layout_constraintTop_toTopOf="@+id/view81" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_6"
+                    app:layout_constraintTop_toTopOf="@+id/okno_6" />
 
                 <RatingBar
-                    android:id="@+id/ratingBar41"
+                    android:id="@+id/ratinag_bar_6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="48dp"
@@ -518,28 +518,28 @@
                     android:scaleX="0.5"
                     android:scaleY="0.5"
                     android:stepSize="1"
-                    app:layout_constraintBottom_toBottomOf="@+id/view81"
-                    app:layout_constraintStart_toStartOf="@+id/view81" />
+                    app:layout_constraintBottom_toBottomOf="@+id/okno_6"
+                    app:layout_constraintStart_toStartOf="@+id/okno_6" />
 
                 <TextView
-                    android:id="@+id/textView81"
+                    android:id="@+id/adres_6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="280dp"
                     android:layout_marginTop="52dp"
                     android:text="TextView2"
-                    app:layout_constraintStart_toStartOf="@+id/view81"
-                    app:layout_constraintTop_toTopOf="@+id/view81" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_6"
+                    app:layout_constraintTop_toTopOf="@+id/okno_6" />
 
                 <TextView
-                    android:id="@+id/textView121"
+                    android:id="@+id/odleglosc_6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="280dp"
                     android:layout_marginTop="82dp"
                     android:text="TextView"
-                    app:layout_constraintStart_toStartOf="@+id/view81"
-                    app:layout_constraintTop_toTopOf="@+id/view81" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_6"
+                    app:layout_constraintTop_toTopOf="@+id/okno_6" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

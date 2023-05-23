@@ -42,7 +42,7 @@
 
 
                 <view
-                    android:id="@+id/view2"
+                    android:id="@+id/okno_1"
                     class="androidx.appcompat.widget.LinearLayoutCompat"
                     android:layout_width="361dp"
                     android:layout_height="230dp"
@@ -54,19 +54,19 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/zdjecie_1"
                     android:layout_width="75dp"
                     android:layout_height="100dp"
                     android:layout_marginEnd="250dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/view2"
-                    app:layout_constraintEnd_toEndOf="@+id/view2"
-                    app:layout_constraintStart_toStartOf="@+id/view2"
-                    app:layout_constraintTop_toTopOf="@+id/view2"
+                    app:layout_constraintBottom_toBottomOf="@+id/okno_1"
+                    app:layout_constraintEnd_toEndOf="@+id/okno_1"
+                    app:layout_constraintStart_toStartOf="@+id/okno_1"
+                    app:layout_constraintTop_toTopOf="@+id/okno_1"
                     app:layout_constraintVertical_bias="0.045"
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <EditText
-                    android:id="@+id/userData_name"
+                    android:id="@+id/Imie_i_nazwisko_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="108dp"
@@ -74,8 +74,8 @@
                     android:ems="10"
                     android:inputType="text"
                     android:text="Name"
-                    app:layout_constraintStart_toStartOf="@+id/view2"
-                    app:layout_constraintTop_toTopOf="@+id/view2" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_1"
+                    app:layout_constraintTop_toTopOf="@+id/okno_1" />
 
                 <EditText
                     android:id="@+id/Dolegliwosci"
@@ -86,8 +86,8 @@
                     android:ems="10"
                     android:inputType="text"
                     android:text="Dolegliwosci"
-                    app:layout_constraintStart_toStartOf="@+id/view2"
-                    app:layout_constraintTop_toTopOf="@+id/view2" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_1"
+                    app:layout_constraintTop_toTopOf="@+id/okno_1" />
 
                 <TextView
                     android:id="@+id/bolace_gardlo"
@@ -96,8 +96,8 @@
                     android:layout_marginStart="108dp"
                     android:layout_marginTop="156dp"
                     android:text="bolące gardło"
-                    app:layout_constraintStart_toStartOf="@+id/view2"
-                    app:layout_constraintTop_toTopOf="@+id/view2" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_1"
+                    app:layout_constraintTop_toTopOf="@+id/okno_1" />
 
                 <TextView
                     android:id="@+id/kaszel"
@@ -106,8 +106,8 @@
                     android:layout_marginStart="108dp"
                     android:layout_marginTop="128dp"
                     android:text="suchy kaszel"
-                    app:layout_constraintStart_toStartOf="@+id/view2"
-                    app:layout_constraintTop_toTopOf="@+id/view2" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_1"
+                    app:layout_constraintTop_toTopOf="@+id/okno_1" />
 
                 <TextView
                     android:id="@+id/katar"
@@ -116,8 +116,8 @@
                     android:layout_marginStart="108dp"
                     android:layout_marginTop="184dp"
                     android:text="katar"
-                    app:layout_constraintStart_toStartOf="@+id/view2"
-                    app:layout_constraintTop_toTopOf="@+id/view2" />
+                    app:layout_constraintStart_toStartOf="@+id/okno_1"
+                    app:layout_constraintTop_toTopOf="@+id/okno_1" />
 
 
                 <org.osmdroid.views.MapView
