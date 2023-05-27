@@ -7,15 +7,6 @@
     android:background="@drawable/background_purple_flower"
     tools:context=".SettingsActivity">
 
-    <Button
-        android:id="@+id/settings_backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Powrót"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <view
         android:id="@+id/view"
         class="androidx.appcompat.widget.SearchView"
@@ -178,6 +169,17 @@
                     app:layout_constraintEnd_toEndOf="@+id/viewData"
                     app:layout_constraintStart_toStartOf="@+id/viewData"
                     app:layout_constraintTop_toTopOf="@+id/viewData" />
+
+                <Button
+                    android:id="@+id/settings_backButton5"
+                    android:layout_width="245dp"
+                    android:layout_height="49dp"
+                    android:backgroundTint="@color/light_yellow"
+                    android:text="Powrót"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="602dp" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

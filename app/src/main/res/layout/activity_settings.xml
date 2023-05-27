@@ -7,19 +7,19 @@
     android:background="@drawable/background_purple_flower"
     tools:context=".SettingsActivity">
 
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="374dp"
+        android:layout_height="602dp"
+        app:srcCompat="@drawable/background_text_purple_see_through"
+        tools:layout_editor_absoluteX="18dp"
+        tools:layout_editor_absoluteY="11dp" />
+
     <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="409dp"
-        android:layout_height="500dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="250dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        android:layout_width="334dp"
+        android:layout_height="583dp"
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="18dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,37 +27,77 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/settings_personalDataButton"
+                android:id="@+id/ustawienia1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:insetTop="20dp"
-                android:insetBottom="20dp"
-                android:text="@string/personal_data"
-                android:textSize="20sp" />
+                android:layout_height="90dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="Dodaj adres"
+                android:textColor="@color/black"
+                android:textSize="20"
+                app:iconTint="@color/white" />
 
             <Button
-                android:id="@+id/settings_addAddressButton"
+                android:id="@+id/ustawienia2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:insetTop="20dp"
-                android:insetBottom="20dp"
-                android:text="@string/address_data"
-                android:textSize="20sp" />
+                android:layout_height="90dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="Powiadomienia"
+                android:textColor="@color/black"
+                android:textSize="20"
+                app:iconTint="@color/white" />
 
-            <!-- Dodaj więcej przycisków lub inne elementy -->
+            <Button
+                android:id="@+id/ustawienia3"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="Zmień dane osobowe"
+                android:textColor="@color/black"
+                android:textSize="20"
+                app:iconTint="@color/white" />
+
+            <Button
+                android:id="@+id/ustawienia4"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="Inne"
+                android:textColor="@color/black"
+                android:textSize="20"
+                app:iconTint="@color/white" />
+
+            <Button
+                android:id="@+id/ustawienia6"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="Inne"
+                android:textColor="@color/black"
+                android:textSize="20"
+                app:iconTint="@color/white" />
+
+            <Button
+                android:id="@+id/ustawienia7"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="Usuń konto"
+                android:textColor="@color/black"
+                android:textSize="20"
+                app:iconTint="@color/white" />
 
         </LinearLayout>
-
     </ScrollView>
 
     <Button
         android:id="@+id/settings_backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="244dp"
+        android:layout_height="43dp"
+        android:backgroundTint="#FFC107"
         android:text="Powrót"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
-        app:layout_constraintVertical_bias="0.62" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

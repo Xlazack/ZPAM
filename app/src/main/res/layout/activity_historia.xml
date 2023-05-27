@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_purple_gradient"
+    tools:context=".RegisterActivity">
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="657dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/Choroba1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/choroba1"
+                    android:layout_width="345dp"
+                    android:layout_height="103dp"
+                    android:backgroundTint="#F6F4F4"
+                    tools:layout_editor_absoluteX="32dp"
+                    tools:layout_editor_absoluteY="16dp" />
+
+                <TextView
+                    android:id="@+id/chorobaTytuł1"
+                    android:layout_width="269dp"
+                    android:layout_height="45dp"
+                    android:text="Angina"
+                    android:textColor="@color/black"
+                    android:textSize="35sp"
+                    tools:layout_editor_absoluteX="74dp"
+                    tools:layout_editor_absoluteY="12dp" />
+
+                <TextView
+                    android:id="@+id/chorobaData1"
+                    android:layout_width="269dp"
+                    android:layout_height="33dp"
+                    android:text="10.12.2020"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    tools:layout_editor_absoluteX="74dp"
+                    tools:layout_editor_absoluteY="55dp" />
+
+                <TextView
+                    android:id="@+id/chorobaLekarz1"
+                    android:layout_width="269dp"
+                    android:layout_height="31dp"
+                    android:text="dr. Janusz Tracz"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    tools:layout_editor_absoluteX="74dp"
+                    tools:layout_editor_absoluteY="81dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/Choroba2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/choroba2"
+                    android:layout_width="345dp"
+                    android:layout_height="103dp"
+                    android:backgroundTint="#F6F4F4"
+                    tools:layout_editor_absoluteX="32dp"
+                    tools:layout_editor_absoluteY="16dp" />
+
+                <TextView
+                    android:id="@+id/chorobaTytuł2"
+                    android:layout_width="269dp"
+                    android:layout_height="45dp"
+                    android:text="Przykład"
+                    android:textColor="@color/black"
+                    android:textSize="35sp"
+                    tools:layout_editor_absoluteX="74dp"
+                    tools:layout_editor_absoluteY="12dp" />
+
+                <TextView
+                    android:id="@+id/chorobaData2"
+                    android:layout_width="269dp"
+                    android:layout_height="33dp"
+                    android:text="XX.XX.XXXX"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    tools:layout_editor_absoluteX="74dp"
+                    tools:layout_editor_absoluteY="55dp" />
+
+                <TextView
+                    android:id="@+id/chorobaLekarz2"
+                    android:layout_width="269dp"
+                    android:layout_height="30dp"
+                    android:text="Imię Nazwisko"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    tools:layout_editor_absoluteX="74dp"
+                    tools:layout_editor_absoluteY="81dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/Choroba3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/choroba3"
+                    android:layout_width="345dp"
+                    android:layout_height="103dp"
+                    android:backgroundTint="#F6F4F4"
+                    tools:layout_editor_absoluteX="32dp"
+                    tools:layout_editor_absoluteY="16dp" />
+
+                <TextView
+                    android:id="@+id/chorobaTytuł3"
+                    android:layout_width="269dp"
+                    android:layout_height="45dp"
+                    android:text="Przykład"
+                    android:textColor="@color/black"
+                    android:textSize="35sp"
+                    tools:layout_editor_absoluteX="74dp"
+                    tools:layout_editor_absoluteY="12dp" />
+
+                <TextView
+                    android:id="@+id/chorobaData3"
+                    android:layout_width="269dp"
+                    android:layout_height="33dp"
+                    android:text="XX.XX.XXXX"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    tools:layout_editor_absoluteX="74dp"
+                    tools:layout_editor_absoluteY="55dp" />
+
+                <TextView
+                    android:id="@+id/chorobaLekarz3"
+                    android:layout_width="269dp"
+                    android:layout_height="30dp"
+                    android:text="Imię Nazwisko"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    tools:layout_editor_absoluteX="74dp"
+                    tools:layout_editor_absoluteY="81dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/Choroba4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/choroba4"
+                    android:layout_width="345dp"
+                    android:layout_height="103dp"
+                    android:backgroundTint="#F6F4F4"
+                    tools:layout_editor_absoluteX="32dp"
+                    tools:layout_editor_absoluteY="16dp" />
+
+                <TextView
+                    android:id="@+id/chorobaTytuł4"
+                    android:layout_width="269dp"
+                    android:layout_height="45dp"
+                    android:text="Przykład"
+                    android:textColor="@color/black"
+                    android:textSize="35sp"
+                    tools:layout_editor_absoluteX="74dp"
+                    tools:layout_editor_absoluteY="12dp" />
+
+                <TextView
+                    android:id="@+id/chorobaData4"
+                    android:layout_width="269dp"
+                    android:layout_height="33dp"
+                    android:text="XX.XX.XXXX"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    tools:layout_editor_absoluteX="74dp"
+                    tools:layout_editor_absoluteY="55dp" />
+
+                <TextView
+                    android:id="@+id/chorobaLekarz4"
+                    android:layout_width="269dp"
+                    android:layout_height="30dp"
+                    android:text="Imię Nazwisko"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    tools:layout_editor_absoluteX="74dp"
+                    tools:layout_editor_absoluteY="81dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/Choroba5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/choroba5"
+                    android:layout_width="345dp"
+                    android:layout_height="103dp"
+                    android:backgroundTint="#F6F4F4"
+                    tools:layout_editor_absoluteX="32dp"
+                    tools:layout_editor_absoluteY="16dp" />
+
+                <TextView
+                    android:id="@+id/chorobaTytuł5"
+                    android:layout_width="269dp"
+                    android:layout_height="45dp"
+                    android:text="Przykład"
+                    android:textColor="@color/black"
+                    android:textSize="35sp"
+                    tools:layout_editor_absoluteX="74dp"
+                    tools:layout_editor_absoluteY="12dp" />
+
+                <TextView
+                    android:id="@+id/chorobaData5"
+                    android:layout_width="269dp"
+                    android:layout_height="33dp"
+                    android:text="XX.XX.XXXX"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    tools:layout_editor_absoluteX="74dp"
+                    tools:layout_editor_absoluteY="55dp" />
+
+                <TextView
+                    android:id="@+id/chorobaLekarz5"
+                    android:layout_width="269dp"
+                    android:layout_height="30dp"
+                    android:text="Imię Nazwisko"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    tools:layout_editor_absoluteX="74dp"
+                    tools:layout_editor_absoluteY="81dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/Choroba6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/choroba6"
+                    android:layout_width="345dp"
+                    android:layout_height="103dp"
+                    android:backgroundTint="#F6F4F4"
+                    tools:layout_editor_absoluteX="32dp"
+                    tools:layout_editor_absoluteY="16dp" />
+
+                <TextView
+                    android:id="@+id/chorobaTytuł6"
+                    android:layout_width="269dp"
+                    android:layout_height="45dp"
+                    android:text="Angina"
+                    android:textColor="@color/black"
+                    android:textSize="35sp"
+                    tools:layout_editor_absoluteX="74dp"
+                    tools:layout_editor_absoluteY="12dp" />
+
+                <TextView
+                    android:id="@+id/chorobaData6"
+                    android:layout_width="269dp"
+                    android:layout_height="33dp"
+                    android:text="10.12.2020"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    tools:layout_editor_absoluteX="74dp"
+                    tools:layout_editor_absoluteY="55dp" />
+
+                <TextView
+                    android:id="@+id/chorobaLekarz6"
+                    android:layout_width="269dp"
+                    android:layout_height="31dp"
+                    android:text="dr. Janusz Tracz"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    tools:layout_editor_absoluteX="74dp"
+                    tools:layout_editor_absoluteY="81dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
