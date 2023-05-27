@@ -6,4 +6,6 @@
     <color name="purple_solid">#FF6c0686</color>
     <color name="pink">#99fa0eff</color>
     <color name="light_green">#FF8CD34E</color>
+    <color name="light_yellow">#CACD80</color>
+    <color name="light_purple">#F66BFA</color>
 </resources>

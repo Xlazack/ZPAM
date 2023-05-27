@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:background="@drawable/background_text_purple_see_through"
+        android:background="@drawable/background_text_purple"
         android:text="Przejdź do logowania"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,14 +39,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_login_button"
         app:layout_constraintVertical_bias="0.16000003" />
-
-    <Button
-        android:id="@+id/databaseButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:text="Dodaj symptomy do bazy danych #Debug"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
