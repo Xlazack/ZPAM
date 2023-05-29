@@ -11,181 +11,148 @@
         android:layout_height="673dp"
         app:srcCompat="@drawable/background_purple_gradient"
         tools:layout_editor_absoluteX="-7dp"
-        tools:layout_editor_absoluteY="-7dp" />
+        tools:layout_editor_absoluteY="-7dp"
+        tools:ignore="MissingConstraints" />
 
-    <LinearLayout
-        android:layout_width="330dp"
-        android:layout_height="646dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="5dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/GdzieJestProblem"
+            android:layout_width="330dp"
+            android:layout_height="69dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.444"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.074"
+            app:srcCompat="@drawable/background_text_purple_see_through" />
 
-            <ImageView
-                android:id="@+id/imageView16"
-                android:layout_width="326dp"
-                android:layout_height="66dp"
-                app:srcCompat="@drawable/background_text_purple_see_through"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="380dp" />
+        <Spinner
+            android:id="@+id/WybierzGdzieJestProblem"
+            android:layout_width="319dp"
+            android:layout_height="29dp"
+            android:background="#FFFFFF"
+            android:backgroundTint="#FFC107"
+            android:entries="@array/GdzieWystepujeProblem"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/GdzieJestProblem"
+            app:layout_constraintVertical_bias="0.058" />
 
-            <Space
-                android:layout_width="319dp"
-                android:layout_height="10dp"
-                tools:layout_editor_absoluteX="-9dp"
-                tools:layout_editor_absoluteY="449dp" />
 
-            <ImageView
-                android:id="@+id/imageView17"
-                android:layout_width="294dp"
-                android:layout_height="57dp"
-                app:srcCompat="@drawable/background_transparent_white"
-                tools:layout_editor_absoluteX="13dp"
-                tools:layout_editor_absoluteY="458dp" />
+        <ImageView
+            android:id="@+id/WKtorymMiejscu"
+            android:layout_width="330dp"
+            android:layout_height="69dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.34"
+            app:srcCompat="@drawable/background_text_purple_see_through" />
 
-            <Space
-                android:layout_width="329dp"
-                android:layout_height="50dp"
-                tools:layout_editor_absoluteX="-4dp"
-                tools:layout_editor_absoluteY="519dp" />
+        <Spinner
+            android:id="@+id/WybierzWKtorymMiejscu"
+            android:layout_width="319dp"
+            android:layout_height="29dp"
+            android:background="#FFFFFF"
+            android:backgroundTint="#FFC107"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/GdzieJestProblem"
+            app:layout_constraintVertical_bias="0.373" />
 
-            <ImageView
-                android:id="@+id/imageView14"
-                android:layout_width="330dp"
-                android:layout_height="69dp"
-                app:srcCompat="@drawable/background_text_purple_see_through"
-                tools:layout_editor_absoluteX="1dp"
-                tools:layout_editor_absoluteY="191dp" />
+        <ImageView
+            android:id="@+id/RodzajDolegliwosci"
+            android:layout_width="326dp"
+            android:layout_height="66dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.517"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.635"
+            app:srcCompat="@drawable/background_text_purple_see_through" />
 
-            <Space
-                android:layout_width="319dp"
-                android:layout_height="10dp"
-                tools:layout_editor_absoluteX="-4dp"
-                tools:layout_editor_absoluteY="260dp" />
+        <Spinner
+            android:id="@+id/WybierzRodzajDolegliwosci"
+            android:layout_width="319dp"
+            android:layout_height="29dp"
+            android:background="#FFFFFF"
+            android:backgroundTint="#FFC107"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.576"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/GdzieJestProblem"
+            app:layout_constraintVertical_bias="0.702" />
 
-            <ImageView
-                android:id="@+id/imageView15"
-                android:layout_width="294dp"
-                android:layout_height="57dp"
-                app:srcCompat="@drawable/background_transparent_white"
-                tools:layout_editor_absoluteX="19dp"
-                tools:layout_editor_absoluteY="269dp" />
+        <TextView
+            android:id="@+id/Text_GdzieWystepujeProblem"
+            android:layout_width="305dp"
+            android:layout_height="44dp"
+            android:text="Gdzie występuje problem?"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/GdzieJestProblem"
+            app:layout_constraintEnd_toEndOf="@+id/GdzieJestProblem"
+            app:layout_constraintHorizontal_bias="0.68"
+            app:layout_constraintStart_toStartOf="@+id/GdzieJestProblem"
+            app:layout_constraintTop_toTopOf="@+id/GdzieJestProblem"
+            app:layout_constraintVertical_bias="0.72" />
 
-            <Space
-                android:layout_width="329dp"
-                android:layout_height="50dp"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="330dp" />
+        <TextView
+            android:id="@+id/Text_WKtorymMiejscu"
+            android:layout_width="304dp"
+            android:layout_height="52dp"
+            android:text="W którym miejscu?"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/WKtorymMiejscu"
+            app:layout_constraintEnd_toEndOf="@+id/WKtorymMiejscu"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/WKtorymMiejscu"
+            app:layout_constraintTop_toTopOf="@+id/WKtorymMiejscu"
+            app:layout_constraintVertical_bias="1.0" />
 
-            <ImageView
-                android:id="@+id/imageView10"
-                android:layout_width="330dp"
-                android:layout_height="69dp"
-                app:srcCompat="@drawable/background_text_purple_see_through"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="2dp" />
+        <TextView
+            android:id="@+id/Text_RodzajDolegliwosci"
+            android:layout_width="304dp"
+            android:layout_height="52dp"
+            android:text="Rodzaj dolegliwości"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/RodzajDolegliwosci"
+            app:layout_constraintEnd_toEndOf="@+id/RodzajDolegliwosci"
+            app:layout_constraintHorizontal_bias="0.59"
+            app:layout_constraintStart_toStartOf="@+id/RodzajDolegliwosci"
+            app:layout_constraintTop_toTopOf="@+id/RodzajDolegliwosci"
+            app:layout_constraintVertical_bias="1.0" />
 
-            <Space
-                android:layout_width="319dp"
-                android:layout_height="10dp"
-                tools:layout_editor_absoluteX="-5dp"
-                tools:layout_editor_absoluteY="71dp" />
+        <Button
+            android:id="@+id/settings_backButton3"
+            android:layout_width="260dp"
+            android:layout_height="65dp"
+            android:backgroundTint="#FFC107"
+            android:text="Dodaj"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.927" />
 
-            <ImageView
-                android:id="@+id/imageView13"
-                android:layout_width="294dp"
-                android:layout_height="57dp"
-                app:srcCompat="@drawable/background_transparent_white"
-                tools:layout_editor_absoluteX="18dp"
-                tools:layout_editor_absoluteY="81dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <Space
-                android:layout_width="329dp"
-                android:layout_height="50dp"
-                tools:layout_editor_absoluteX="1dp"
-                tools:layout_editor_absoluteY="142dp" />
-
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="305dp"
-                android:layout_height="44dp"
-                android:text="Gdzie występuje problem?"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                tools:layout_editor_absoluteX="13dp"
-                tools:layout_editor_absoluteY="16dp" />
-
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="304dp"
-                android:layout_height="52dp"
-                android:text="W którym miejscu?"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                tools:layout_editor_absoluteX="14dp"
-                tools:layout_editor_absoluteY="207dp" />
-
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="304dp"
-                android:layout_height="52dp"
-                android:text="Rodzaj dolegliwości"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                tools:layout_editor_absoluteX="13dp"
-                tools:layout_editor_absoluteY="396dp" />
-
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="273dp"
-                android:layout_height="46dp"
-                android:text="Wybierz"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:textStyle="italic"
-                tools:layout_editor_absoluteX="29dp"
-                tools:layout_editor_absoluteY="91dp" />
-
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="273dp"
-                android:layout_height="46dp"
-                android:text="Wybierz"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:textStyle="italic"
-                tools:layout_editor_absoluteX="29dp"
-                tools:layout_editor_absoluteY="280dp" />
-
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="273dp"
-                android:layout_height="46dp"
-                android:text="Wybierz"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:textStyle="italic"
-                tools:layout_editor_absoluteX="29dp"
-                tools:layout_editor_absoluteY="469dp" />
-
-            <Button
-                android:id="@+id/settings_backButton3"
-                android:layout_width="260dp"
-                android:layout_height="65dp"
-                android:backgroundTint="#FFC107"
-                android:text="Dodaj"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                tools:layout_editor_absoluteX="35dp"
-                tools:layout_editor_absoluteY="569dp" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
