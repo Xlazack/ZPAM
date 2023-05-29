@@ -17,6 +17,9 @@
         android:theme="@style/Theme.ZPAM"
         tools:targetApi="31">
         <activity
+            android:name=".SymptomsAddingActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginDoctorActivity"
             android:exported="false" />
         <activity

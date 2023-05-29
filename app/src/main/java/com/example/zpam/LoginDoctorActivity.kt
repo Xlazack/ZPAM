@@ -53,10 +53,14 @@ class LoginDoctorActivity : AppCompatActivity() {
 
         // Obsługa kliknięcia przycisku przejścia do rejestrowania
         registerButton.setOnClickListener {
-            registerButton.setOnClickListener {
                 val intent = Intent(this, RegisterActivity::class.java)
                 startActivity(intent)
-            }
+        }
+        val rbutton = findViewById<Button>(R.id.button2)
+        rbutton.setOnClickListener {
+                val intent = Intent(this, SymptomsAddingActivity::class.java)
+                startActivity(intent)
+                finish()
         }
     }
     private fun fetchUserDataFromFirebase(): Boolean? {
