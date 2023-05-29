@@ -25,7 +25,7 @@ class HomeActivity : AppCompatActivity() {
 
         val newsearchButton = findViewById<ImageButton>(R.id.home_searchButton)
         newsearchButton.setOnClickListener {
-            val intent = Intent(this, NewFileActivity::class.java)
+            val intent = Intent(this, Symptoms::class.java)
             startActivity(intent)
         }
     }
