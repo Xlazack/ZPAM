@@ -22,6 +22,7 @@ class RegisterDoctorActivity : AppCompatActivity() {
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var usernameEditText: EditText
     private lateinit var firebaseReference: DatabaseReference
+    private lateinit var doctorFirebaseReference: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +39,8 @@ class RegisterDoctorActivity : AppCompatActivity() {
 
         // Inicjalizacja instancji Firebase Auth
         firebaseAuth = FirebaseAuth.getInstance()
-        firebaseReference = FirebaseDatabase.getInstance().getReference("Doctors")
+        firebaseReference = FirebaseDatabase.getInstance().getReference("Users")
+        doctorFirebaseReference = FirebaseDatabase.getInstance().getReference("Doctors")
 
         // Obsługa kliknięcia przycisku rejestracji
         registerButton.setOnClickListener {
@@ -93,6 +95,15 @@ class RegisterDoctorActivity : AppCompatActivity() {
                                         .child("userData")
                                     val user = UserModel(null, null, null, null, email, null, null, true)
                                     firebaseReference.child(userId).child("userData").setValue(user)
+                                        .addOnSuccessListener {
+                                            // Pomyślnie dodano dane do bazy danych
+                                            showToast("Pomyślnie zaktualizowano dane w bazie danych")
+                                        }
+                                        .addOnFailureListener { exception ->
+                                            // Wystąpił błąd podczas dodawania danych do bazy danych
+                                            showToast("Wystąpił błąd podczas aktualizowania danych w bazie danych")
+                                        }
+                                    doctorFirebaseReference.child(userId).child("doctorData").setValue(user)
                                         .addOnSuccessListener {
                                             // Pomyślnie dodano dane do bazy danych
                                             showToast("Pomyślnie zaktualizowano dane w bazie danych")
