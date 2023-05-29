@@ -7,7 +7,8 @@ data class UserModel(
     var userPesel: String? = null,
     var userEmail: String? = null,
     var userPhone: String? = null,
-    var userAddress: String? = null
+    var userAddress: String? = null,
+    var userIsDoctor: Boolean? = null
 ) {
 
 }

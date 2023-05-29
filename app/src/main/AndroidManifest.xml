@@ -17,6 +17,15 @@
         android:theme="@style/Theme.ZPAM"
         tools:targetApi="31">
         <activity
+            android:name=".LoginDoctorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterDoctorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainDoctorActivity"
+            android:exported="false" />
+        <activity
             android:name=".NewFileActivity"
             android:exported="false" />
         <activity

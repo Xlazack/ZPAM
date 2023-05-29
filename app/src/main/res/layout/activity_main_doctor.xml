@@ -8,7 +8,7 @@
     tools:context=".MainActivity" >
 
     <TextView
-        android:id="@+id/logowanie_textView"
+        android:id="@+id/main_doctor_logowanie_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/main_login_button"
+        android:id="@+id/main_doctor_login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login"
@@ -30,22 +30,22 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/main_register_button"
+        android:id="@+id/main_doctor_register_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Zarejestruj"
         app:layout_constraintBottom_toTopOf="@+id/main_isDoctorButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_login_button" />
+        app:layout_constraintTop_toBottomOf="@+id/main_doctor_login_button" />
 
     <Button
-        android:id="@+id/main_isDoctorButton"
+        android:id="@+id/main_doctor_isDoctorButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/im_a_doctor"
+        android:text="@string/is_not_a_doctor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_register_button" />
+        app:layout_constraintTop_toBottomOf="@+id/main_doctor_register_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

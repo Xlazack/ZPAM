@@ -13,7 +13,7 @@ import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
-class RegisterActivity : AppCompatActivity() {
+class RegisterDoctorActivity : AppCompatActivity() {
     private lateinit var emailEditText: EditText
     private lateinit var passwordEditText: EditText
     private lateinit var confirmPasswordEditText: EditText
@@ -25,20 +25,20 @@ class RegisterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
+        setContentView(R.layout.activity_register_doctor)
 
         // Inicjalizacja obiektów widoku
-        emailEditText = findViewById(R.id.register_emailAddress_text)
-        //usernameEditText = findViewById(R.id.register_Name_text)
-        passwordEditText = findViewById(R.id.register_Password_text)
-        confirmPasswordEditText = findViewById(R.id.register_repeatPassword_text)
-        registerButton = findViewById(R.id.register_registerButton)
-        loginButton = findViewById(R.id.register_loginButton)
+        emailEditText = findViewById(R.id.register_doctor_emailAddress_text)
+        //usernameEditText = findViewById(R.id.register_doctor_Name_text)
+        passwordEditText = findViewById(R.id.register_doctor_Password_text)
+        confirmPasswordEditText = findViewById(R.id.register_doctor_repeatPassword_text)
+        registerButton = findViewById(R.id.register_doctor_registerButton)
+        loginButton = findViewById(R.id.register_doctor_loginButton)
 
 
         // Inicjalizacja instancji Firebase Auth
         firebaseAuth = FirebaseAuth.getInstance()
-        firebaseReference = FirebaseDatabase.getInstance().getReference("Users")
+        firebaseReference = FirebaseDatabase.getInstance().getReference("Doctors")
 
         // Obsługa kliknięcia przycisku rejestracji
         registerButton.setOnClickListener {
@@ -52,7 +52,7 @@ class RegisterActivity : AppCompatActivity() {
 
         // Obsługa kliknięcia przycisku Zaloguj
         loginButton.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
+            val intent = Intent(this, LoginDoctorActivity::class.java)
             startActivity(intent)
         }
     }
@@ -91,7 +91,7 @@ class RegisterActivity : AppCompatActivity() {
                                         .child("Users")
                                         .child(userId)
                                         .child("userData")
-                                    val user = UserModel(null, null, null, null, email, null, null, false)
+                                    val user = UserModel(null, null, null, null, email, null, null, true)
                                     firebaseReference.child(userId).child("userData").setValue(user)
                                         .addOnSuccessListener {
                                             // Pomyślnie dodano dane do bazy danych

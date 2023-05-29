@@ -18,5 +18,7 @@
     <string name="repeat_passowrd">Powtórz hasło</string>
     <string name="back_to_login">Powrót do logowania</string>
     <string name="choroba1">Choroba1</string>
+    <string name="im_a_doctor">Jestem lekarzem</string>
+    <string name="is_not_a_doctor">Nie jestem lekarzem</string>
 </resources>
 
