@@ -31,9 +31,9 @@ class UserDataActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         val user = firebaseAuth.currentUser
         val userId = user!!.uid
-        val userRef = FirebaseDatabase.getInstance().getReference("Users").child(userId)
+        val userRef = FirebaseDatabase.getInstance().getReference("Users").child(userId).child("userData")
 
-        /*nameEditText = findViewById(R.id.userData_name)
+        nameEditText = findViewById(R.id.userData_name)
         surnameEditText = findViewById(R.id.userData_surname)
         dateOfBirthEditText = findViewById(R.id.userData_dateOfBirth)
         PESELEditText = findViewById(R.id.userData_PESEL)
@@ -53,7 +53,7 @@ class UserDataActivity : AppCompatActivity() {
         val saveUserDataButton = findViewById<Button>(R.id.userData_saveButton)
         saveUserDataButton.setOnClickListener {
             saveUserDataToFirebase(userRef, nameEditText, surnameEditText, dateOfBirthEditText, PESELEditText, emailEditText, phoneEditText, addressEditText)
-        }*/
+        }
     }
 }
 

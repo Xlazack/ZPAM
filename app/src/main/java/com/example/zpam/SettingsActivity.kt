@@ -16,7 +16,7 @@ class SettingsActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val userDataButton = findViewById<Button>(R.id.ustawienia4)
+        val userDataButton = findViewById<Button>(R.id.settings_userDataButton)
         userDataButton.setOnClickListener {
             val intent = Intent(this, UserDataActivity::class.java)
             startActivity(intent)

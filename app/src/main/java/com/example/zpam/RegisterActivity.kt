@@ -90,6 +90,7 @@ class RegisterActivity : AppCompatActivity() {
                                     val userReference = FirebaseDatabase.getInstance().reference
                                         .child("Users")
                                         .child(userId)
+                                        .child("userData")
                                     val user = UserModel(null, null, null, null, email, null)
                                     firebaseReference.child(userId).setValue(user)
                                         .addOnSuccessListener {

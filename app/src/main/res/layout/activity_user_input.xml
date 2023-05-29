@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/userData_userDataBackground"
+        android:layout_width="221dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="608dp"
+        app:layout_constraintBottom_toBottomOf="@+id/userData_Background"
+        app:layout_constraintEnd_toEndOf="@+id/userData_Background"
+        app:layout_constraintStart_toStartOf="@+id/userData_Background"
+        app:layout_constraintTop_toTopOf="@+id/userData_Background"
+        app:srcCompat="@drawable/background_text_purple_see_through" />
+
+    <TextView
+        android:id="@+id/userData_Title"
+        android:layout_width="207dp"
+        android:layout_height="36dp"
+        android:text="@string/personal_data"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/userData_userDataBackground"
+        app:layout_constraintEnd_toEndOf="@+id/userData_userDataBackground"
+        app:layout_constraintStart_toStartOf="@+id/userData_userDataBackground"
+        app:layout_constraintTop_toTopOf="@+id/userData_userDataBackground" />
+
+    <ImageView
+        android:id="@+id/userData_Background"
+        android:layout_width="412dp"
+        android:layout_height="662dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background_purple_gradient" />
+
+    <Button
+        android:id="@+id/userInput_saveButton"
+        android:layout_width="245dp"
+        android:layout_height="49dp"
+        android:backgroundTint="@color/light_yellow"
+        android:text="@string/save"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/userInput_backButton"
+        android:layout_width="146dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/light_yellow"
+        android:text="@string/back"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/userInput_saveButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:layout_width="314dp"
+        android:layout_height="527dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/userData_address_imageView"
+                android:layout_width="313dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="14dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/space7"
+                app:srcCompat="@drawable/background_transparent_white" />
+
+            <Space
+                android:id="@+id/space7"
+                android:layout_width="311dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginBottom="1dp"
+                app:layout_constraintBottom_toTopOf="@+id/userData_address_imageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userData_telephone_imageView" />
+
+            <ImageView
+                android:id="@+id/userData_telephone_imageView"
+                android:layout_width="313dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="4dp"
+                app:layout_constraintBottom_toTopOf="@+id/space7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/space6"
+                app:srcCompat="@drawable/background_transparent_white" />
+
+            <ImageView
+                android:id="@+id/userData_email_imageView"
+                android:layout_width="313dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/space4"
+                app:srcCompat="@drawable/background_transparent_white" />
+
+            <Space
+                android:id="@+id/space6"
+                android:layout_width="311dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/userData_telephone_imageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userData_email_imageView" />
+
+            <ImageView
+                android:id="@+id/userData_PESEL_imageView"
+                android:layout_width="313dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="1dp"
+                app:layout_constraintBottom_toTopOf="@+id/space4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/space3"
+                app:srcCompat="@drawable/background_transparent_white" />
+
+            <Space
+                android:id="@+id/space4"
+                android:layout_width="311dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="1dp"
+                app:layout_constraintBottom_toTopOf="@+id/userData_email_imageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userData_PESEL_imageView" />
+
+            <ImageView
+                android:id="@+id/userData_dateOfBirth_imageView"
+                android:layout_width="313dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="2dp"
+                app:layout_constraintBottom_toTopOf="@+id/space3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/space2"
+                app:srcCompat="@drawable/background_transparent_white" />
+
+            <Space
+                android:id="@+id/space3"
+                android:layout_width="311dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="4dp"
+                app:layout_constraintBottom_toTopOf="@+id/userData_PESEL_imageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userData_dateOfBirth_imageView" />
+
+            <ImageView
+                android:id="@+id/userData_surname_imageView"
+                android:layout_width="313dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="1dp"
+                app:layout_constraintBottom_toTopOf="@+id/space2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/space"
+                app:srcCompat="@drawable/background_transparent_white" />
+
+            <Space
+                android:id="@+id/space2"
+                android:layout_width="311dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="1dp"
+                app:layout_constraintBottom_toTopOf="@+id/userData_dateOfBirth_imageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userData_surname_imageView" />
+
+            <ImageView
+                android:id="@+id/userData_name_imageView"
+                android:layout_width="313dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="1dp"
+                app:layout_constraintBottom_toTopOf="@+id/space"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/background_transparent_white" />
+
+            <Space
+                android:id="@+id/space"
+                android:layout_width="311dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="1dp"
+                app:layout_constraintBottom_toTopOf="@+id/userData_surname_imageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userData_name_imageView" />
+
+            <EditText
+                android:id="@+id/userInput_name"
+                android:layout_width="284dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="1dp"
+                android:ems="10"
+                android:hint="@string/name"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="@+id/userData_name_imageView"
+                app:layout_constraintEnd_toEndOf="@+id/userData_name_imageView"
+                app:layout_constraintStart_toStartOf="@+id/userData_name_imageView"
+                app:layout_constraintTop_toTopOf="@+id/userData_name_imageView" />
+
+            <EditText
+                android:id="@+id/userInput_surname"
+                android:layout_width="284dp"
+                android:layout_height="55dp"
+                android:ems="10"
+                android:hint="@string/surname"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="@+id/userData_surname_imageView"
+                app:layout_constraintEnd_toEndOf="@+id/userData_surname_imageView"
+                app:layout_constraintStart_toStartOf="@+id/userData_surname_imageView"
+                app:layout_constraintTop_toTopOf="@+id/userData_surname_imageView" />
+
+            <EditText
+                android:id="@+id/userInput_dateOfBirth"
+                android:layout_width="284dp"
+                android:layout_height="55dp"
+                android:ems="10"
+                android:hint="@string/date_of_birth"
+                android:inputType="date"
+                android:textAlignment="center"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="@+id/userData_dateOfBirth_imageView"
+                app:layout_constraintEnd_toEndOf="@+id/userData_dateOfBirth_imageView"
+                app:layout_constraintStart_toStartOf="@+id/userData_dateOfBirth_imageView"
+                app:layout_constraintTop_toTopOf="@+id/userData_dateOfBirth_imageView" />
+
+            <EditText
+                android:id="@+id/userInput_PESEL"
+                android:layout_width="284dp"
+                android:layout_height="55dp"
+                android:ems="10"
+                android:hint="PESEL"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="@+id/userData_PESEL_imageView"
+                app:layout_constraintEnd_toEndOf="@+id/userData_PESEL_imageView"
+                app:layout_constraintStart_toStartOf="@+id/userData_PESEL_imageView"
+                app:layout_constraintTop_toTopOf="@+id/userData_PESEL_imageView" />
+
+            <EditText
+                android:id="@+id/userInput_email"
+                android:layout_width="284dp"
+                android:layout_height="55dp"
+                android:ems="10"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:textAlignment="center"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="@+id/userData_email_imageView"
+                app:layout_constraintEnd_toEndOf="@+id/userData_email_imageView"
+                app:layout_constraintStart_toStartOf="@+id/userData_email_imageView"
+                app:layout_constraintTop_toTopOf="@+id/userData_email_imageView" />
+
+            <EditText
+                android:id="@+id/userInput_phone"
+                android:ems="10"
+                android:hint="@string/phone_number"
+                android:inputType="phone"
+                android:textAlignment="center"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="@+id/userData_telephone_imageView"
+                app:layout_constraintEnd_toEndOf="@+id/userData_telephone_imageView"
+                app:layout_constraintStart_toStartOf="@+id/userData_telephone_imageView"
+                app:layout_constraintTop_toTopOf="@+id/userData_telephone_imageView" />
+
+            <EditText
+                android:id="@+id/userInput_address"
+                android:layout_width="309dp"
+                android:layout_height="59dp"
+                android:ems="10"
+                android:hint="@string/Address"
+                android:inputType="textPostalAddress"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@+id/userData_address_imageView"
+                app:layout_constraintEnd_toEndOf="@+id/userData_address_imageView"
+                app:layout_constraintStart_toStartOf="@+id/userData_address_imageView"
+                app:layout_constraintTop_toTopOf="@+id/userData_address_imageView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

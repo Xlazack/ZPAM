@@ -50,7 +50,7 @@
                 app:iconTint="@color/white" />
 
             <Button
-                android:id="@+id/settings_personalDataButton"
+                android:id="@+id/settings_userDataButton"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
                 android:backgroundTint="#FFFFFF"
