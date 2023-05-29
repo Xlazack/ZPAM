@@ -33,7 +33,7 @@ class UserDataActivity : AppCompatActivity() {
         val userId = user!!.uid
         val userRef = FirebaseDatabase.getInstance().getReference("Users").child(userId)
 
-        nameEditText = findViewById(R.id.Imie_i_nazwisko_1)
+        /*nameEditText = findViewById(R.id.userData_name)
         surnameEditText = findViewById(R.id.userData_surname)
         dateOfBirthEditText = findViewById(R.id.userData_dateOfBirth)
         PESELEditText = findViewById(R.id.userData_PESEL)
@@ -53,7 +53,7 @@ class UserDataActivity : AppCompatActivity() {
         val saveUserDataButton = findViewById<Button>(R.id.userData_saveButton)
         saveUserDataButton.setOnClickListener {
             saveUserDataToFirebase(userRef, nameEditText, surnameEditText, dateOfBirthEditText, PESELEditText, emailEditText, phoneEditText, addressEditText)
-        }
+        }*/
     }
 }
 
@@ -95,8 +95,8 @@ private fun saveUserDataToFirebase(userRef: DatabaseReference, name: EditText, s
     val address = address.text.toString()
     // Get values from other fields
 
-    val userData = UserModel(name, surname, dateOfBirth, PESEL, email, phone, address/* other values */)
-    userRef.setValue(userData)
+    val userData = UserModel(name, surname, dateOfBirth, PESEL, email, phone, address)
+    userRef.setValue(userData) //Usuwa pliki chorobowe!!!
         .addOnSuccessListener {
             // Data saved successfully
         }

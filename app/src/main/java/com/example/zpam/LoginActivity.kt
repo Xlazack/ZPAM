@@ -31,11 +31,13 @@ class LoginActivity : AppCompatActivity() {
 
         // Inicjalizacja instancji Firebase Auth
         firebaseAuth = FirebaseAuth.getInstance()
+        showToast(firebaseAuth.toString())
 
         // Obsługa kliknięcia przycisku logowania
         loginButton.setOnClickListener {
             val email = emailEditText.text.toString()
             val password = passwordEditText.text.toString()
+            //showToast(email+password)
 
             loginUser(email, password)
         }
@@ -50,6 +52,11 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun loginUser(email: String, password: String) {
+        if (email == "" || password == "") {
+            // Show an error message indicating that both email and password are required
+            showToast("Please enter your email and password.")
+            return
+        }
         firebaseAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
@@ -65,6 +72,7 @@ class LoginActivity : AppCompatActivity() {
                     Log.w(TAG, "signInWithEmail:failure", task.exception)
 
                     // Obsługa różnych błędów logowania
+
                     when (task.exception) {
                         is FirebaseAuthInvalidUserException -> {
                             // Nieprawidłowy adres e-mail lub konto nie istnieje

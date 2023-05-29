@@ -4,8 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 
 class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +16,7 @@ class SettingsActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val userDataButton = findViewById<Button>(R.id.settings_personalDataButton)
+        val userDataButton = findViewById<Button>(R.id.ustawienia4)
         userDataButton.setOnClickListener {
             val intent = Intent(this, UserDataActivity::class.java)
             startActivity(intent)

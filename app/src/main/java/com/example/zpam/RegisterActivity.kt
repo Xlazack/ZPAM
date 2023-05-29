@@ -43,11 +43,11 @@ class RegisterActivity : AppCompatActivity() {
         // Obsługa kliknięcia przycisku rejestracji
         registerButton.setOnClickListener {
             val email = emailEditText.text.toString()
-            val username = usernameEditText.text.toString()
+            val username = null
             val password = passwordEditText.text.toString()
             val confirmPassword = confirmPasswordEditText.text.toString()
 
-            registerUser(email, null, password, confirmPassword)
+            registerUser(email, username, password, confirmPassword)
         }
 
         // Obsługa kliknięcia przycisku Zaloguj
@@ -58,6 +58,11 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun registerUser(email: String, username: String?, password: String, confirmPassword: String) {
+        if (email == "" || password == "") {
+            // Show an error message indicating that both email and password are required
+            showToast("Please enter your email and password.")
+            return
+        }
         if (password == confirmPassword) {
             firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->

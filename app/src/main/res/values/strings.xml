@@ -6,5 +6,16 @@
     <string name="password">Hasło</string>
     <string name="login">Zaloguj</string>
     <string name="register">Zarejestruj</string>
+    <string name="personal_data">Dane osobowe</string>
+    <string name="address_data">Dane adresowe</string>
+    <string name="name">Imię</string>
+    <string name="surname">Nazwisko</string>
+    <string name="back">Powrót</string>
+    <string name="date_of_birth">Data urodzenia</string>
+    <string name="phone_number">nr Telefonu</string>
+    <string name="Address">Adres pocztowy</string>
+    <string name="save">Zapisz</string>
+    <string name="repeat_passowrd">Powtórz hasło</string>
+    <string name="back_to_login">Powrót do logowania</string>
     <string name="choroba1">Choroba1</string>
 </resources>
