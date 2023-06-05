@@ -19,7 +19,7 @@ class HomeActivity : AppCompatActivity() {
 
         val newFileButton = findViewById<ImageButton>(R.id.home_newInstanceButton)
         newFileButton.setOnClickListener {
-            val intent = Intent(this, NewFileActivity::class.java)
+            val intent = Intent(this, Symptoms::class.java)
             startActivity(intent)
         }
 
