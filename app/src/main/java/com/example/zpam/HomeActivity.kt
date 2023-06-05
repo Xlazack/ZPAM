@@ -19,12 +19,12 @@ class HomeActivity : AppCompatActivity() {
 
         val newFileButton = findViewById<ImageButton>(R.id.home_newInstanceButton)
         newFileButton.setOnClickListener {
-            val intent = Intent(this, Symptoms::class.java)
+            val intent = Intent(this, NewFileActivity::class.java)
             startActivity(intent)
         }
 
-        val newsearchButton = findViewById<ImageButton>(R.id.home_searchButton)
-        newsearchButton.setOnClickListener {
+        val newSearchButton = findViewById<ImageButton>(R.id.home_searchButton)
+        newSearchButton.setOnClickListener {
             val intent = Intent(this, SearchActivity::class.java)
             startActivity(intent)
         }

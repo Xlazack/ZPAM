@@ -16,9 +16,8 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import kotlin.properties.Delegates
 
-class LoginActivity : AppCompatActivity() {
+class LoginDoctorActivity3 : AppCompatActivity() {
 
     private lateinit var emailEditText: EditText
     private lateinit var passwordEditText: EditText
@@ -29,22 +28,20 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var user: FirebaseUser
     private var isDoctor: Boolean? = null
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_login_doctor)
 
         // Inicjalizacja obiektów widoku
-        emailEditText = findViewById<EditText>(R.id.emailAddress_text)
-        passwordEditText = findViewById<EditText>(R.id.password_text)
-        loginButton = findViewById<Button>(R.id.main_login_button)
-        registerButton = findViewById(R.id.register_button)
+        emailEditText = findViewById<EditText>(R.id.login_doctor_emailAddress_text)
+        passwordEditText = findViewById<EditText>(R.id.login_doctor_password_text)
+        loginButton = findViewById<Button>(R.id.login_doctor_login_button)
+        registerButton = findViewById(R.id.login_doctor_register_button)
 
         // Inicjalizacja instancji Firebase Auth
         firebaseAuth = FirebaseAuth.getInstance()
         firebaseReference = FirebaseDatabase.getInstance().getReference("Users")
         showToast(firebaseAuth.toString())
-
 
         // Obsługa kliknięcia przycisku logowania
         loginButton.setOnClickListener {
@@ -56,10 +53,14 @@ class LoginActivity : AppCompatActivity() {
 
         // Obsługa kliknięcia przycisku przejścia do rejestrowania
         registerButton.setOnClickListener {
-            registerButton.setOnClickListener {
                 val intent = Intent(this, RegisterActivity::class.java)
                 startActivity(intent)
-            }
+        }
+        val rbutton = findViewById<Button>(R.id.button2)
+        rbutton.setOnClickListener {
+                val intent = Intent(this, SymptomsAddingActivity::class.java)
+                startActivity(intent)
+                finish()
         }
     }
     private fun fetchUserDataFromFirebase(): Boolean? {
@@ -95,11 +96,10 @@ class LoginActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     // Użytkownik został pomyślnie zalogowany
                     Log.d(TAG, "signInWithEmail:success")
-                    //showToast("Udane Logowanie")
-
+                    showToast("Udane Logowanie")
                     // Przejście do HomeActivity
                     if (fetchUserDataFromFirebase() == true) {
-                        showToast("Dane pobrane poprawnie")
+                        showToast("Ping")
                         val intent = Intent(this, HomeActivity::class.java)
                         startActivity(intent)
                         finish()
@@ -139,6 +139,4 @@ class LoginActivity : AppCompatActivity() {
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
-
-
 }

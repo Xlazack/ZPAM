@@ -52,7 +52,7 @@ class RegisterActivity : AppCompatActivity() {
 
         // Obsługa kliknięcia przycisku Zaloguj
         loginButton.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
+            val intent = Intent(this, LoginActivity3::class.java)
             startActivity(intent)
         }
     }
@@ -107,7 +107,7 @@ class RegisterActivity : AppCompatActivity() {
                                 }
                             }
 
-                        val intent = Intent(this, LoginActivity::class.java)
+                        val intent = Intent(this, LoginActivity3::class.java)
                         startActivity(intent)
                         finish()
 

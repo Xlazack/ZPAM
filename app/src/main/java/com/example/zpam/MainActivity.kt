@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
 
         val loginButton = findViewById<Button>(R.id.main_login_button)
         loginButton.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
+            val intent = Intent(this, LoginActivity3::class.java)
             startActivity(intent)
             finish() //Zamienić gdy doda się wylogowywanie
         }

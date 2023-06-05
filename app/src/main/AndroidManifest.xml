@@ -20,7 +20,7 @@
             android:name=".SymptomsAddingActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginDoctorActivity"
+            android:name=".LoginDoctorActivity3"
             android:exported="false" />
         <activity
             android:name=".RegisterDoctorActivity"
@@ -44,7 +44,7 @@
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".LoginActivity3"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

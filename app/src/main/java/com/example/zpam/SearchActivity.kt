@@ -2,14 +2,12 @@ package com.example.zpam
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import android.widget.Button
 
-class SearchActivity {
 
-    class MainActivity : AppCompatActivity() {
-
-        override fun onCreate(savedInstanceState: Bundle?) {
+class SearchActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.activity_wybor_lekarza)
 
@@ -20,5 +18,4 @@ class SearchActivity {
             }
         }
     }
-}
 
