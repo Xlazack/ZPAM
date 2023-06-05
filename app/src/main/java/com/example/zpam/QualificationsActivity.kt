@@ -2,69 +2,60 @@ package com.example.zpam
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.CheckBox
 import android.widget.LinearLayout
 import android.widget.ScrollView
-import android.widget.TextView
+import com.example.zpam.R
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class QualificationsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_qualifications)
 
-        val db = FirebaseFirestore.getInstance()
+        val db = Firebase.firestore
         val symptomsCollection = db.collection("Symptoms")
 
         val symptomOptionsLayout: LinearLayout = findViewById(R.id.qualifications_linearLayout)
         val scrollView: ScrollView = findViewById(R.id.qualifications_scrollView)
 
-        symptomsCollection
-            .get()
-            .addOnSuccessListener { result ->
+
+        symptomsCollection.get().addOnSuccessListener { querySnapshot ->
             val categories = mutableListOf<String>()
-            for (document in result) {
+            for (document in querySnapshot.documents) {
                 val categoryName = document.getString("name")
                 if (categoryName != null) {
                     categories.add(categoryName)
                 }
             }
-
-            for (category in categories) {
-                val categoryTextView = TextView(this)
-                categoryTextView.text = category
-                symptomOptionsLayout.addView(categoryTextView)
-
-                val optionsRef = symptomsCollection.document(category).collection("children")
-                optionsRef
-                    .get()
-                    .addOnSuccessListener { childrenSnapshot ->
-                        val optionsLayout = LinearLayout(this)
-                        optionsLayout.orientation = LinearLayout.VERTICAL
-                        val options = mutableListOf<String>()
-                        for (optionDocument in childrenSnapshot) {
-                            val problem = optionDocument.getString("name")
-
-                            if (problem != null) {
-                                val optionCheckBox = TextView(this)
-                                optionCheckBox.text = "\t" + problem
-                                optionsLayout.addView(optionCheckBox)
-                            }
-
-                            //val option = optionDocument.get
-                        }
-
-                        symptomOptionsLayout.addView(optionsLayout)
-                    }
-                    .addOnFailureListener { exception ->
-                        // Obsłuż błąd pobierania opcji objawów
-                    }
+            for (name in categories) {
+                val symptomCheckBox = CheckBox(this)
+                symptomCheckBox.text = name
+                symptomOptionsLayout.addView(symptomCheckBox)
             }
-
-            scrollView.addView(symptomOptionsLayout)
         }
-            .addOnFailureListener { exception ->
-                // Obsłuż błąd pobierania kategorii objawów
+        /*db.collection("Symptoms")
+            .get()
+            .addOnSuccessListener { querySnapshot ->
+            for (document in querySnapshot.documents) {
+                val symptomName = document.getString("name")
+                if (symptomName != null) {
+                    val symptomCheckBox = CheckBox(this)
+                    symptomCheckBox.text = symptomName
+                    symptomOptionsLayout.addView(symptomCheckBox)
+                }
             }
+        }*/
+            .addOnFailureListener { exception ->
+                // Obsłuż błąd pobierania dokumentów z kolekcji "Symptoms"
+            }
+
+        scrollView.addView(symptomOptionsLayout)
     }
 }
