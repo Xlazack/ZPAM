@@ -16,7 +16,11 @@ import androidx.core.view.forEach
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import java.util.logging.Logger.global
 
 data class SymptomOption(
@@ -32,6 +36,8 @@ data class SymptomData(
 
 private lateinit var firebaseReference: DatabaseReference
 private lateinit var filesRef: DatabaseReference
+private lateinit var filesReference: CollectionReference
+private lateinit var db: FirebaseFirestore
 private lateinit var userId: String
 private lateinit var fileId: String
 class UpdatedNewFileActivity : AppCompatActivity() {
@@ -39,11 +45,13 @@ class UpdatedNewFileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_updated_new_file)
 
+        db = Firebase.firestore
+
         userId = FirebaseAuth.getInstance().currentUser!!.uid
         firebaseReference = FirebaseDatabase.getInstance().getReference("Users")
         filesRef = FirebaseDatabase.getInstance().reference.child("Users").child(userId).child("Files")
+        filesReference = db.collection("Users").document(userId).collection("userFiles")
 
-        val db = FirebaseFirestore.getInstance()
 
 // Referencja do kolekcji "Symptoms"
         val symptomsCollection = db.collection("Symptoms")
@@ -123,10 +131,10 @@ class UpdatedNewFileActivity : AppCompatActivity() {
 
     }
 
-    override fun onResume() {
+    /*override fun onResume() {
         super.onResume()
 
-        filesRef.get().addOnSuccessListener { dataSnapshot ->
+        filesReference.get().addOnSuccessListener { dataSnapshot ->
             fileId = dataSnapshot.childrenCount.toString()
             //showToast(recordCount.toString())
             // Use the recordCount variable here
@@ -134,6 +142,20 @@ class UpdatedNewFileActivity : AppCompatActivity() {
         }.addOnFailureListener { error ->
             // Handle error here
         }
+    }*/
+    override fun onResume() {
+        super.onResume()
+
+        val userFilesCollection = Firebase.firestore.collection("Users").document(userId).collection("userFiles")
+        userFilesCollection
+            .get()
+            .addOnSuccessListener { querySnapshot ->
+                fileId = querySnapshot.documents.size.toString()
+                showToast(fileId)
+            }
+            .addOnFailureListener { error ->
+                // Handle error here
+            }
     }
 
     @SuppressLint("WrongViewCast")
@@ -171,7 +193,7 @@ class UpdatedNewFileActivity : AppCompatActivity() {
         val symptomData = SymptomData(userId, selectedSymptom, selectedOptions)
         showToast(symptomData.toString())
         // Zapis obiektu SymptomData do bazy danych
-        firebaseReference.child(userId).child("Files").child(fileId).setValue(symptomData)
+        filesReference.document(fileId).set(symptomData)
             .addOnSuccessListener {
                 // Zapis powiódł się
                 // Wykonaj odpowiednie działania po zapisie danych
