@@ -276,7 +276,7 @@
                     android:id="@+id/chorobaLekarz6"
                     android:layout_width="269dp"
                     android:layout_height="31dp"
-                    android:text="dr. Janusz Tracz"
+                    android:text="dr Jan Nowak"
                     android:textColor="@color/black"
                     android:textSize="25sp"
                     tools:layout_editor_absoluteX="74dp"

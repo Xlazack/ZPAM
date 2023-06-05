@@ -11,15 +11,17 @@
         android:id="@+id/logowanie_textView"
         android:layout_width="148dp"
         android:layout_height="52dp"
-        android:layout_marginTop="100dp"
         android:background="@drawable/background_text_purple_see_through"
         android:text="@string/logowanie"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.123" />
 
     <EditText
         android:id="@+id/emailAddress_text"
