@@ -20,5 +20,13 @@
     <string name="choroba1">Choroba1</string>
     <string name="im_a_doctor">Jestem lekarzem</string>
     <string name="is_not_a_doctor">Nie jestem lekarzem</string>
+    <string name="powr_t">Powrót</string>
+    <string name="powrót" />
+    <string name="wyszukiwanie_lekarzy">Wyszukiwanie lekarzy</string>
+    <string name="przegladanie">Przegladanie</string>
+    <string name="ustawienia">Ustawienia</string>
+    <string name="nowe_zgloszenie">Nowe zgloszenie</string>
+    <string name="czy_wiedzia_e_e">Czy wiedziałeś że...?</string>
+    <string name="czy_wiedziles_ze">Czy wiedziles ze</string>
 </resources>
 

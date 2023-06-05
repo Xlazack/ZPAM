@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
+import kotlinx.coroutines.newSingleThreadContext
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,8 +26,9 @@ class HomeActivity : AppCompatActivity() {
 
         val newSearchButton = findViewById<ImageButton>(R.id.home_searchButton)
         newSearchButton.setOnClickListener {
-            val intent = Intent(this, SearchActivity::class.java)
+            val intent = Intent(this, Search2::class.java)
             startActivity(intent)
         }
+
     }
 }

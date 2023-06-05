@@ -19,17 +19,16 @@
 <!--        app:srcCompat="@drawable/background_text_solid_purple"-->
 <!--        tools:ignore="MissingConstraints" />-->
 
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="457dp"
-        android:layout_height="359dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/cwierckolo" />
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView12"-->
+<!--        android:layout_width="623dp"-->
+<!--        android:layout_height="466dp"-->
+<!--        android:layout_marginTop="256dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.207"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:srcCompat="@drawable/cwierckolo" />-->
 
     <ImageView
         android:id="@+id/imageView18"
@@ -41,13 +40,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.075"
-        app:srcCompat="@drawable/background_text_purple_see_through" />
+        app:srcCompat="@drawable/background_text_purple_see_through"
+        android:contentDescription="@string/czy_wiedziles_ze" />
 
     <TextView
         android:id="@+id/home_dailyTip_text"
         android:layout_width="225dp"
         android:layout_height="37dp"
-        android:text="Czy wiedziałeś że...?"
+        android:text="@string/czy_wiedzia_e_e"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -71,7 +71,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="?attr/actionModePasteDrawable" />
+        app:srcCompat="?attr/actionModePasteDrawable"
+        android:contentDescription="@string/nowe_zgloszenie" />
 
     <ImageButton
         android:id="@+id/home_searchButton"
@@ -79,12 +80,13 @@
         android:layout_height="100dp"
         android:background="@drawable/background_text_purple_button_home"
         android:backgroundTint="@color/light_yellow"
+        android:contentDescription="@string/wyszukiwanie_lekarzy"
         app:layout_constraintBottom_toTopOf="@+id/home_newInstanceButton"
         app:layout_constraintEnd_toStartOf="@+id/home_yourFilesButton"
-        app:layout_constraintHorizontal_bias="0.81"
+        app:layout_constraintHorizontal_bias="0.771"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/home_yourFilesButton"
-        app:layout_constraintVertical_bias="0.83"
+        app:layout_constraintVertical_bias="0.846"
         app:srcCompat="@android:drawable/ic_search_category_default" />
 
     <ImageButton
@@ -100,7 +102,8 @@
         app:layout_constraintStart_toStartOf="@+id/home_newInstanceButton"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.84000003"
-        app:srcCompat="?android:attr/actionModeFindDrawable" />
+        app:srcCompat="?android:attr/actionModeFindDrawable"
+        android:contentDescription="@string/przegladanie" />
 
     <ImageButton
         android:id="@+id/home_settingsButton"
@@ -114,7 +117,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/home_searchButton"
         app:layout_constraintVertical_bias="0.88"
-        app:srcCompat="@android:drawable/ic_menu_manage" />
+        app:srcCompat="@android:drawable/ic_menu_manage"
+        android:contentDescription="@string/ustawienia" />
 
 
 
