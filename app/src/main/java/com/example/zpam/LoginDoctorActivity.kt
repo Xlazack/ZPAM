@@ -100,11 +100,11 @@ class LoginDoctorActivity : AppCompatActivity() {
                     // Przejście do HomeActivity
                     if (fetchUserDataFromFirebase() == true) {
                         showToast("Ping")
-                        val intent = Intent(this, HomeActivity::class.java)
+                        val intent = Intent(this, HomeDoctorActivity::class.java)
                         startActivity(intent)
                         finish()
                     } else if (fetchUserDataFromFirebase() == false){
-                        val intent = Intent(this, HomeActivity::class.java)
+                        val intent = Intent(this, HomeDoctorActivity::class.java)
                         startActivity(intent)
                         finish()
                     }

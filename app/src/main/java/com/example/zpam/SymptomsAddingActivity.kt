@@ -37,7 +37,12 @@ class SymptomsAddingActivity : AppCompatActivity() {
                 ),
                 hashMapOf(
                     "name" to "Pain located in",
-                    "options" to listOf("Lower abdomen", "Middle abdomen", "Upper abdomen", "Pain is radiating to the whole body")
+                    "options" to listOf(
+                        "Lower abdomen",
+                        "Middle abdomen",
+                        "Upper abdomen",
+                        "Pain is radiating to the whole body"
+                    )
                 ),
                 hashMapOf(
                     "name" to "Triggered or worsened by",
@@ -60,7 +65,6 @@ class SymptomsAddingActivity : AppCompatActivity() {
                 )
             )
         )
-
 
 
         val powrot = findViewById<Button>(R.id.button4)
@@ -87,6 +91,8 @@ class SymptomsAddingActivity : AppCompatActivity() {
                     // Błąd - nie udało się utworzyć lub zaktualizować dokumentu
                 }
         }
+    }
+}
 
         /*val firestore = FirebaseFirestore.getInstance()
 
@@ -167,5 +173,6 @@ class SymptomsAddingActivity : AppCompatActivity() {
             firebaseReference.child("Cough_in_adults").child("Problem_is").child("Ongoing").setValue("0222")
             firebaseReference.child("Cough_in_adults").child("Problem_is").child("Worsening").setValue("0223")
         }*/
+/*
     }
-}
+}*/

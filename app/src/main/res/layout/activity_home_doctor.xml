@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeDoctorActivity">
+
+    <Button
+        android:id="@+id/homeDoctor_symptomsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wypełnij kwalifikacje"
+        app:layout_constraintBottom_toTopOf="@+id/homeDoctor_patientsList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/homeDoctor_patientsList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Przejrzyj pacjentów"
+        app:layout_constraintBottom_toTopOf="@+id/homeDoctor_userData"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homeDoctor_symptomsButton" />
+
+    <Button
+        android:id="@+id/homeDoctor_userData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wypełnij dane osobowe"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homeDoctor_patientsList" />
+</androidx.constraintlayout.widget.ConstraintLayout>
