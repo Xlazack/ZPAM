@@ -41,7 +41,7 @@ class LoginActivity : AppCompatActivity() {
         // Inicjalizacja instancji Firebase Auth i Firestore
         auth = Firebase.auth
         firestore = Firebase.firestore
-        userId = auth.currentUser!!.uid
+
 
         // Obsługa kliknięcia przycisku logowania
         loginButton.setOnClickListener {
@@ -65,6 +65,7 @@ class LoginActivity : AppCompatActivity() {
                     val userData = document.toObject(UserModel::class.java)
                     userData?.let { user ->
                         isDoctor = user.userIsDoctor
+                        showToast(isDoctor.toString())
                         navigateToHomeActivity()
                     }
                 } else {
@@ -86,6 +87,8 @@ class LoginActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     // Użytkownik został pomyślnie zalogowany
                     Log.d(TAG, "signInWithEmail:success")
+                    userId = auth.currentUser!!.uid
+                    showToast("Zalogowany")
                     fetchUserDataFromFirestore()
                 } else {
                     // W przypadku błędu logowania
