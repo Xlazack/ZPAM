@@ -32,25 +32,25 @@
 
     <ImageView
         android:id="@+id/imageView18"
-        android:layout_width="256dp"
+        android:layout_width="348dp"
         android:layout_height="66dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.075"
-        app:srcCompat="@drawable/background_text_purple_see_through"
-        android:contentDescription="@string/czy_wiedziles_ze" />
+        app:layout_constraintVertical_bias="0.074"
+        app:srcCompat="@drawable/background_text_purple_see_through" />
 
     <TextView
         android:id="@+id/home_dailyTip_text"
-        android:layout_width="225dp"
-        android:layout_height="37dp"
-        android:text="@string/czy_wiedzia_e_e"
+        android:layout_width="284dp"
+        android:layout_height="30dp"
+        android:text="Czy wiedziales ze"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="@+id/imageView18"
         app:layout_constraintEnd_toEndOf="@+id/imageView18"
         app:layout_constraintStart_toStartOf="@+id/imageView18"
