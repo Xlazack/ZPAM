@@ -10,8 +10,9 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.UserProfileChangeRequest
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var emailEditText: EditText
@@ -20,8 +21,7 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var registerButton: Button
     private lateinit var loginButton: Button
     private lateinit var firebaseAuth: FirebaseAuth
-    private lateinit var usernameEditText: EditText
-    private lateinit var firebaseReference: DatabaseReference
+    private lateinit var firebaseFirestore: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,25 +29,22 @@ class RegisterActivity : AppCompatActivity() {
 
         // Inicjalizacja obiektów widoku
         emailEditText = findViewById(R.id.register_emailAddress_text)
-        //usernameEditText = findViewById(R.id.register_Name_text)
         passwordEditText = findViewById(R.id.register_Password_text)
         confirmPasswordEditText = findViewById(R.id.register_repeatPassword_text)
         registerButton = findViewById(R.id.register_registerButton)
         loginButton = findViewById(R.id.register_loginButton)
 
-
-        // Inicjalizacja instancji Firebase Auth
+        // Inicjalizacja instancji Firebase Auth i Firestore
         firebaseAuth = FirebaseAuth.getInstance()
-        firebaseReference = FirebaseDatabase.getInstance().getReference("Users")
+        firebaseFirestore = Firebase.firestore
 
         // Obsługa kliknięcia przycisku rejestracji
         registerButton.setOnClickListener {
             val email = emailEditText.text.toString()
-            val username = null
             val password = passwordEditText.text.toString()
             val confirmPassword = confirmPasswordEditText.text.toString()
 
-            registerUser(email, username, password, confirmPassword)
+            registerUser(email, password, confirmPassword)
         }
 
         // Obsługa kliknięcia przycisku Zaloguj
@@ -57,9 +54,8 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    private fun registerUser(email: String, username: String?, password: String, confirmPassword: String) {
-        if (email == "" || password == "") {
-            // Show an error message indicating that both email and password are required
+    private fun registerUser(email: String, password: String, confirmPassword: String) {
+        if (email.isEmpty() || password.isEmpty()) {
             showToast("Please enter your email and password.")
             return
         }
@@ -74,25 +70,23 @@ class RegisterActivity : AppCompatActivity() {
 
                         // Ustawienie nazwy użytkownika w profilu
                         val userProfileChangeRequest = UserProfileChangeRequest.Builder()
-                            .setDisplayName(username)
+                            .setDisplayName(null)
                             .build()
 
                         user?.updateProfile(userProfileChangeRequest)
                             ?.addOnCompleteListener { updateProfileTask ->
                                 if (updateProfileTask.isSuccessful) {
                                     // Pomyślnie zaktualizowano nazwę użytkownika
-                                    // Możesz wykonać dodatkowe czynności po rejestracji, takie jak utworzenie pozycji w bazie danych itp.
                                     showToast("Pomyślnie zaktualizowano nazwę użytkownika")
 
-                                    // Przekazanie danych do bazy danych Firebase
+                                    // Przekazanie danych do bazy danych Firestore
                                     val userId = user.uid
-                                    showToast(userId)
-                                    val userReference = FirebaseDatabase.getInstance().reference
-                                        .child("Users")
-                                        .child(userId)
-                                        .child("userData")
-                                    val user = UserModel(null, null, null, null, email, null, null, false)
-                                    firebaseReference.child(userId).child("userData").setValue(user)
+                                    val userReferenceDoc = firebaseFirestore.collection("Users").document(userId).collection("userData").document("data")
+
+                                    //val user = UserModel(null, null, null, null, email, null, null, false)
+                                    val user = UserModel(null, null, null, null, email, null, null, false).show()
+
+                                    userReferenceDoc.set(user)
                                         .addOnSuccessListener {
                                             // Pomyślnie dodano dane do bazy danych
                                             showToast("Pomyślnie zaktualizowano dane w bazie danych")
@@ -133,12 +127,12 @@ class RegisterActivity : AppCompatActivity() {
             // Hasło i potwierdzenie hasła nie pasują do siebie
             showToast("Potwierdzenie hasła nie zgadza się z hasłem")
         }
-
     }
 
     companion object {
         private const val TAG = "RegisterActivity"
     }
+
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }

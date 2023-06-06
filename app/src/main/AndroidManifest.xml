@@ -17,6 +17,24 @@
         android:theme="@style/Theme.ZPAM"
         tools:targetApi="31">
         <activity
+            android:name=".SymptomEntryDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FilesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SymptomEntryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".QualificationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeDoctorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UpdatedNewFileActivity"
+            android:exported="false" />
+        <activity
             android:name=".SymptomsAddingActivity"
             android:exported="false" />
         <activity

@@ -6,16 +6,15 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class UserDataActivity : AppCompatActivity() {
 
     private lateinit var firebaseAuth: FirebaseAuth
-    private lateinit var firebaseReference: DatabaseReference
+    private lateinit var firestore: FirebaseFirestore
     private lateinit var nameEditText: EditText
     private lateinit var surnameEditText: EditText
     private lateinit var dateOfBirthEditText: EditText
@@ -29,9 +28,10 @@ class UserDataActivity : AppCompatActivity() {
         setContentView(R.layout.activity_user_data)
 
         firebaseAuth = FirebaseAuth.getInstance()
+        firestore = Firebase.firestore
         val user = firebaseAuth.currentUser
         val userId = user!!.uid
-        val userRef = FirebaseDatabase.getInstance().getReference("Users").child(userId).child("userData")
+        val userRef = firestore.collection("Users").document(userId).collection("userData").document("data")
 
         nameEditText = findViewById(R.id.userData_name)
         surnameEditText = findViewById(R.id.userData_surname)
@@ -41,7 +41,7 @@ class UserDataActivity : AppCompatActivity() {
         phoneEditText = findViewById(R.id.userData_phone)
         addressEditText = findViewById(R.id.userData_address)
 
-        fetchUserDataFromFirebase(userId, userRef, nameEditText, surnameEditText, dateOfBirthEditText, PESELEditText, emailEditText, phoneEditText, addressEditText)
+        fetchUserDataFromFirestore(userId, userRef, nameEditText, surnameEditText, dateOfBirthEditText, PESELEditText, emailEditText, phoneEditText, addressEditText)
 
         val backButton = findViewById<Button>(R.id.userData_backButton)
         backButton.setOnClickListener {
@@ -52,55 +52,58 @@ class UserDataActivity : AppCompatActivity() {
 
         val saveUserDataButton = findViewById<Button>(R.id.userData_saveButton)
         saveUserDataButton.setOnClickListener {
-            saveUserDataToFirebase(userRef, nameEditText, surnameEditText, dateOfBirthEditText, PESELEditText, emailEditText, phoneEditText, addressEditText)
+            saveUserDataToFirestore(userRef, nameEditText, surnameEditText, dateOfBirthEditText, PESELEditText, emailEditText, phoneEditText, addressEditText)
         }
     }
-}
 
-private fun fetchUserDataFromFirebase(userId:String, userRef: DatabaseReference, name: EditText, surname: EditText, dateOfBirth: EditText, PESEL: EditText, email: EditText, phone: EditText, address: EditText) {
-    val userReference = FirebaseDatabase.getInstance().reference
-        .child("Users")
-        .child(userId)
-
-    userRef.addListenerForSingleValueEvent(object : ValueEventListener {
-        override fun onDataChange(dataSnapshot: DataSnapshot) {
-            if (dataSnapshot.exists()) {
-                val userData = dataSnapshot.getValue(UserModel::class.java)
-                userData?.let { user ->
-                    name.setText(user.userName)
-                    surname.setText(user.userSurname)
-                    dateOfBirth.setText(user.userBirthDate)
-                    PESEL.setText(user.userPesel)
-                    email.setText(user.userEmail)
-                    phone.setText(user.userPhone)
-                    address.setText(user.userAddress)
-                    // Assign values to other fields accordingly
+    private fun fetchUserDataFromFirestore(userId: String, userRef: DocumentReference, name: EditText, surname: EditText, dateOfBirth: EditText, PESEL: EditText, email: EditText, phone: EditText, address: EditText) {
+        userRef.get()
+            .addOnSuccessListener { documentSnapshot ->
+                if (documentSnapshot.exists()) {
+                    val userData = documentSnapshot.toObject(UserModel::class.java)
+                    userData?.let { user ->
+                        name.setText(user.userName)
+                        surname.setText(user.userSurname)
+                        dateOfBirth.setText(user.userBirthDate)
+                        PESEL.setText(user.userPesel)
+                        email.setText(user.userEmail)
+                        phone.setText(user.userPhone)
+                        address.setText(user.userAddress)
+                        // Assign values to other fields accordingly
+                    }
                 }
             }
-        }
+            .addOnFailureListener { exception ->
+                // Handle Firestore data fetching error
+            }
+    }
 
-        override fun onCancelled(databaseError: DatabaseError) {
-            // Obsługa błędu pobierania danych z Firebase
-        }
-    })
-}
-private fun saveUserDataToFirebase(userRef: DatabaseReference, name: EditText, surname: EditText, dateOfBirth: EditText, PESEL: EditText, email: EditText, phone: EditText, address: EditText) {
+    private fun saveUserDataToFirestore(userRef: DocumentReference, name: EditText, surname: EditText, dateOfBirth: EditText, PESEL: EditText, email: EditText, phone: EditText, address: EditText) {
+        val nameValue = name.text.toString()
+        val surnameValue = surname.text.toString()
+        val dateOfBirthValue = dateOfBirth.text.toString()
+        val PESELValue = PESEL.text.toString()
+        val emailValue = email.text.toString()
+        val phoneValue = phone.text.toString()
+        val addressValue = address.text.toString()
+        // Get values from other fields
 
-    val name = name.text.toString()
-    val surname = surname.text.toString()
-    val dateOfBirth = dateOfBirth.text.toString()
-    val PESEL = PESEL.text.toString()
-    val email = email.text.toString()
-    val phone = phone.text.toString()
-    val address = address.text.toString()
-    // Get values from other fields
+        val userDataUpdates = hashMapOf<String, Any>(
+            "userName" to nameValue,
+            "userSurname" to surnameValue,
+            "userBirthDate" to dateOfBirthValue,
+            "userPesel" to PESELValue,
+            "userEmail" to emailValue,
+            "userPhone" to phoneValue,
+            "userAddress" to addressValue
+        )
 
-    val userData = UserModel(name, surname, dateOfBirth, PESEL, email, phone, address)
-    userRef.setValue(userData) //Usuwa pliki chorobowe!!!
-        .addOnSuccessListener {
-            // Data saved successfully
-        }
-        .addOnFailureListener { exception ->
-            // Handle Firebase data saving error
-        }
+        userRef.update(userDataUpdates)
+            .addOnSuccessListener {
+                // Dane zaktualizowane pomyślnie
+            }
+            .addOnFailureListener { exception ->
+                // Obsługa błędu aktualizacji danych w Firestore
+            }
+    }
 }

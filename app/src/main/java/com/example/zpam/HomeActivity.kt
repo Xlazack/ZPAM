@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
-import kotlinx.coroutines.newSingleThreadContext
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,15 +19,20 @@ class HomeActivity : AppCompatActivity() {
 
         val newFileButton = findViewById<ImageButton>(R.id.home_newInstanceButton)
         newFileButton.setOnClickListener {
-            val intent = Intent(this, NewFileActivity::class.java)
+            val intent = Intent(this, UpdatedNewFileActivity::class.java)
             startActivity(intent)
         }
 
-        val newSearchButton = findViewById<ImageButton>(R.id.home_searchButton)
-        newSearchButton.setOnClickListener {
-            val intent = Intent(this, Search2::class.java)
+        /*val newsearchButton = findViewById<ImageButton>(R.id.home_searchButton)
+        newsearchButton.setOnClickListener {
+            val intent = Intent(this, Symptoms::class.java)
+            startActivity(intent)
+        }*/
+
+        val fileExploreButton = findViewById<ImageButton>(R.id.home_yourFilesButton)
+        fileExploreButton.setOnClickListener {
+            val intent = Intent(this, FilesActivity::class.java)
             startActivity(intent)
         }
-
     }
 }

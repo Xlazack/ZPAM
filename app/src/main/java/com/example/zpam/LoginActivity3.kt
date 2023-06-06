@@ -11,23 +11,22 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
-class LoginActivity3 : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
     private lateinit var emailEditText: EditText
     private lateinit var passwordEditText: EditText
     private lateinit var loginButton: Button
-    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var auth: FirebaseAuth
     private lateinit var registerButton: Button
-    private lateinit var firebaseReference: DatabaseReference
+    private lateinit var firestore: FirebaseFirestore
     private lateinit var user: FirebaseUser
     private var isDoctor: Boolean? = null
-
+    private lateinit var userId: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,96 +38,87 @@ class LoginActivity3 : AppCompatActivity() {
         loginButton = findViewById<Button>(R.id.main_login_button)
         registerButton = findViewById(R.id.register_button)
 
-        // Inicjalizacja instancji Firebase Auth
-        firebaseAuth = FirebaseAuth.getInstance()
-        firebaseReference = FirebaseDatabase.getInstance().getReference("Users")
-        showToast(firebaseAuth.toString())
+        // Inicjalizacja instancji Firebase Auth i Firestore
+        auth = Firebase.auth
+        firestore = Firebase.firestore
 
 
         // Obsługa kliknięcia przycisku logowania
         loginButton.setOnClickListener {
             val email = emailEditText.text.toString()
             val password = passwordEditText.text.toString()
-            //showToast(email+password)
             loginUser(email, password)
         }
 
         // Obsługa kliknięcia przycisku przejścia do rejestrowania
         registerButton.setOnClickListener {
-            registerButton.setOnClickListener {
-                val intent = Intent(this, RegisterActivity::class.java)
-                startActivity(intent)
-            }
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
         }
     }
-    private fun fetchUserDataFromFirebase(): Boolean? {
-        firebaseAuth = FirebaseAuth.getInstance()
-        val user = firebaseAuth.currentUser
-        val userId = user!!.uid
-        val userReference = firebaseReference.child(userId).child("userData")
-        userReference.addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                if (dataSnapshot.exists()) {
-                    val userData = dataSnapshot.getValue(UserModel::class.java)
+
+    private fun fetchUserDataFromFirestore() {
+        val userReference = firestore.collection("Users").document(userId).collection("userData").document("data")
+        userReference.get()
+            .addOnSuccessListener { document ->
+                if (document.exists()) {
+                    val userData = document.toObject(UserModel::class.java)
                     userData?.let { user ->
                         isDoctor = user.userIsDoctor
+                        showToast(isDoctor.toString())
+                        navigateToHomeActivity()
                     }
+                } else {
+                    // Dokument nie istnieje
                 }
             }
-
-            override fun onCancelled(databaseError: DatabaseError) {
-                // Obsługa błędu pobierania danych z Firebase
+            .addOnFailureListener { exception ->
+                // Obsługa błędu pobierania danych z Firestore
             }
-        })
-        return isDoctor
     }
 
     private fun loginUser(email: String, password: String) {
         if (email == "" || password == "") {
-            // Show an error message indicating that both email and password are required
             showToast("Please enter your email and password.")
             return
         }
-        firebaseAuth.signInWithEmailAndPassword(email, password)
+        auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Użytkownik został pomyślnie zalogowany
                     Log.d(TAG, "signInWithEmail:success")
-                    //showToast("Udane Logowanie")
-
-                    // Przejście do HomeActivity
-                    if (fetchUserDataFromFirebase() == true) {
-                        showToast("Dane pobrane poprawnie")
-                        val intent = Intent(this, HomeActivity::class.java)
-                        startActivity(intent)
-                        finish()
-                    } else if (fetchUserDataFromFirebase() == false){
-                        val intent = Intent(this, HomeActivity::class.java)
-                        startActivity(intent)
-                        finish()
-                    }
+                    userId = auth.currentUser!!.uid
+                    showToast("Zalogowany")
+                    fetchUserDataFromFirestore()
                 } else {
                     // W przypadku błędu logowania
                     Log.w(TAG, "signInWithEmail:failure", task.exception)
 
                     // Obsługa różnych błędów logowania
-
                     when (task.exception) {
                         is FirebaseAuthInvalidUserException -> {
-                            // Nieprawidłowy adres e-mail lub konto nie istnieje
                             showToast("Nieprawidłowy adres e-mail lub konto nie istnieje")
                         }
                         is FirebaseAuthInvalidCredentialsException -> {
-                            // Nieprawidłowe hasło
                             showToast("Nieprawidłowe hasło")
                         }
                         else -> {
-                            // Inny rodzaj błędu
                             showToast("Błąd przy logowaniu")
                         }
                     }
                 }
             }
+    }
+
+    private fun navigateToHomeActivity() {
+        if (isDoctor == true) {
+            val intent = Intent(this, HomeDoctorActivity::class.java)
+            startActivity(intent)
+        } else if (isDoctor == false) {
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+        }
+        finish()
     }
 
     companion object {
@@ -138,6 +128,4 @@ class LoginActivity3 : AppCompatActivity() {
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
-
-
 }
