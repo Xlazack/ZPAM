@@ -121,7 +121,7 @@ class SymptomsAddingActivity : AppCompatActivity() {
 
         val powrot = findViewById<Button>(R.id.button4)
         powrot.setOnClickListener {
-            val intent = Intent(this, LoginDoctorActivity::class.java)
+            val intent = Intent(this, LoginDoctorActivity3::class.java)
             startActivity(intent)
             finish()
         }

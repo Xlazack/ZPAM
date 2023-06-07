@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace 'com.example.zpam'
-    compileSdk 33
+    compileSdkPreview "UpsideDownCake"
     compileSdkPreview "UpsideDownCake"
 
     defaultConfig {
