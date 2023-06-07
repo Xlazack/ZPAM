@@ -1,9 +1,9 @@
 package com.example.zpam
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 
 class MainDoctorActivity : AppCompatActivity() {
 
@@ -13,7 +13,7 @@ class MainDoctorActivity : AppCompatActivity() {
 
         val loginButton = findViewById<Button>(R.id.main_doctor_login_button)
         loginButton.setOnClickListener {
-            val intent = Intent(this, LoginDoctorActivity3::class.java)
+            val intent = Intent(this, LoginDoctorActivity::class.java)
             startActivity(intent)
             finish() //Zamienić gdy doda się wylogowywanie
         }

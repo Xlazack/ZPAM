@@ -1,12 +1,12 @@
 package com.example.zpam
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
@@ -16,11 +16,12 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
-class LoginActivity : AppCompatActivity() {
+class LoginDoctorActivity : AppCompatActivity() {
 
     private lateinit var emailEditText: EditText
     private lateinit var passwordEditText: EditText
     private lateinit var loginButton: Button
+    private lateinit var rbutton: Button
     private lateinit var auth: FirebaseAuth
     private lateinit var registerButton: Button
     private lateinit var firestore: FirebaseFirestore
@@ -30,13 +31,14 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_login_doctor)
 
         // Inicjalizacja obiektów widoku
-        emailEditText = findViewById<EditText>(R.id.emailAddress_text)
-        passwordEditText = findViewById<EditText>(R.id.password_text)
-        loginButton = findViewById<Button>(R.id.main_login_button)
-        registerButton = findViewById(R.id.register_button)
+        emailEditText = findViewById<EditText>(R.id.login_doctor_emailAddress_text)
+        passwordEditText = findViewById<EditText>(R.id.login_doctor_password_text)
+        loginButton = findViewById<Button>(R.id.login_doctor_login_button)
+        registerButton = findViewById(R.id.login_doctor_register_button)
+        rbutton = findViewById(R.id.button2)
 
         // Inicjalizacja instancji Firebase Auth i Firestore
         auth = Firebase.auth
@@ -55,10 +57,15 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
+        rbutton.setOnClickListener {
+            val intent = Intent(this, SymptomsAddingActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     private fun fetchUserDataFromFirestore() {
-        val userReference = firestore.collection("Users").document(userId).collection("userData").document("data")
+        val userReference = firestore.collection("Doctors").document(userId).collection("userData").document("data")
         userReference.get()
             .addOnSuccessListener { document ->
                 if (document.exists()) {
@@ -129,3 +136,5 @@ class LoginActivity : AppCompatActivity() {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
+
+

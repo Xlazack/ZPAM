@@ -1,19 +1,12 @@
 package com.example.zpam
 
 import android.content.Intent
-import android.icu.text.CaseMap
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.service.controls.ControlsProviderService.TAG
-import android.util.Log
 import android.widget.Button
-import com.google.android.play.integrity.internal.c
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import java.lang.ref.Reference
 
 private lateinit var firebaseReference: DatabaseReference
 
@@ -121,7 +114,7 @@ class SymptomsAddingActivity : AppCompatActivity() {
 
         val powrot = findViewById<Button>(R.id.button4)
         powrot.setOnClickListener {
-            val intent = Intent(this, LoginDoctorActivity3::class.java)
+            val intent = Intent(this, LoginDoctorActivity::class.java)
             startActivity(intent)
             finish()
         }
