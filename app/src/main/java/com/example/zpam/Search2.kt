@@ -48,35 +48,35 @@ class Search2 : AppCompatActivity() {
         wybierzLekarza.setOnClickListener {
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
-        }
 
-        recyclerView = findViewById(R.id.recyclerView)
-        adapter = UserAdapter()
 
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = adapter
+            recyclerView = findViewById(R.id.recyclerView)
+            adapter = UserAdapter()
 
-        // Inicjalizacja Firebase Firestore
-        val db = FirebaseFirestore.getInstance()
+            recyclerView.layoutManager = LinearLayoutManager(this)
+            recyclerView.adapter = adapter
 
-        // Pobieranie danych użytkowników z Firestore
-        db.collection("users")
-            .get()
-            .addOnSuccessListener { result ->
-                val userList = mutableListOf<User>()
-                for (document in result) {
-                    val name = document.getString("name")
-                    val specialization = document.getString("specialization")
-                    val imageUrl = document.getString("imageUrl")
-                    if (name != null && specialization != null && imageUrl != null) {
-                        val user = User(name, specialization, imageUrl)
-                        userList.add(user)
+            // Inicjalizacja Firebase Firestore
+            val db = FirebaseFirestore.getInstance()
+
+            // Pobieranie danych użytkowników z Firestore
+            db.collection("users")
+                .get()
+                .addOnSuccessListener { result ->
+                    val userList = mutableListOf<User>()
+                    for (document in result) {
+                        val name = document.getString("name")
+                        val specialization = document.getString("specialization")
+                        val imageUrl = document.getString("imageUrl")
+                        if (name != null && specialization != null && imageUrl != null) {
+                            val user = User(name, specialization, imageUrl)
+                            userList.add(user)
+                        }
                     }
+                    adapter.setUserList(userList)
                 }
-                adapter.setUserList(userList)
-            }
-            .addOnFailureListener { exception ->
-                // Obsługa błędu
-            }
-    }
-}
+                .addOnFailureListener { exception ->
+                    // Obsługa błędu
+                }
+        }
+    }}

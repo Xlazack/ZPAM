@@ -1,10 +1,9 @@
 package com.example.zpam
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageButton
+import androidx.appcompat.app.AppCompatActivity
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,11 +22,11 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        /*val newsearchButton = findViewById<ImageButton>(R.id.home_searchButton)
-        newsearchButton.setOnClickListener {
-            val intent = Intent(this, Symptoms::class.java)
+        val searchButton = findViewById<ImageButton>(R.id.home_searchButton)
+        searchButton.setOnClickListener {
+            val intent = Intent(this, Search2::class.java)
             startActivity(intent)
-        }*/
+        }
 
         val fileExploreButton = findViewById<ImageButton>(R.id.home_yourFilesButton)
         fileExploreButton.setOnClickListener {

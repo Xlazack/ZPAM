@@ -39,7 +39,7 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
         fun bind(user: User) {
             Glide.with(itemView.context)
                 .load(user.imageUrl)
-                .placeholder(R.drawable.placeholder)
+                .placeholder(R.drawable.no_foto)
                 .into(userImageView)
             usernameTextView.text = user.name
             specializationTextView.text = user.specialization
