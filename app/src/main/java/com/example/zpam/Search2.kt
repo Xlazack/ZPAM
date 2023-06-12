@@ -49,7 +49,6 @@ class Search2 : AppCompatActivity() {
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
 
-
             recyclerView = findViewById(R.id.recyclerView)
             adapter = UserAdapter()
 
