@@ -16,6 +16,7 @@ class SymptomEntryDetailsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_symptom_entry_details)
 
         val entryId = intent.getStringExtra("entryId")!!
+        val symptom = intent.getStringExtra("symptoms")!!
 
         // Step 1: Fetch symptom entry data from Firestore based on the entry ID
         val firestore = Firebase.firestore
@@ -37,7 +38,9 @@ class SymptomEntryDetailsActivity : AppCompatActivity() {
 
         val chooseDoctor = findViewById<Button>(R.id.symptomEntryDetails_chooseDoctorButton)
         chooseDoctor.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
+            val intent = Intent(this, FilteredSearchActivity::class.java)
+            intent.putExtra("entryId", entryId)
+            intent.putExtra("symptoms", symptom)
             startActivity(intent)
         }
     }
