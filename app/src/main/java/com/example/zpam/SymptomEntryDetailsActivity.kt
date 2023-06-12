@@ -1,7 +1,9 @@
 package com.example.zpam
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -32,5 +34,11 @@ class SymptomEntryDetailsActivity : AppCompatActivity() {
             .addOnFailureListener { exception ->
                 // Handle error fetching symptom entry data
             }
+
+        val chooseDoctor = findViewById<Button>(R.id.symptomEntryDetails_chooseDoctorButton)
+        chooseDoctor.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

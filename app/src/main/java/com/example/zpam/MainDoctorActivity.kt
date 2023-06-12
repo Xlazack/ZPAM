@@ -13,7 +13,7 @@ class MainDoctorActivity : AppCompatActivity() {
 
         val loginButton = findViewById<Button>(R.id.main_doctor_login_button)
         loginButton.setOnClickListener {
-            val intent = Intent(this, LoginDoctorActivity3::class.java)
+            val intent = Intent(this, LoginDoctorActivity::class.java)
             startActivity(intent)
             finish() //Zamienić gdy doda się wylogowywanie
         }
