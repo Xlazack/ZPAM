@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.cardview.widget.CardView
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.CollectionReference
@@ -53,6 +54,7 @@ class FilesActivity : AppCompatActivity() {
             userFilesRef.document(entry.id).get()
                 .addOnSuccessListener { document ->
                     symptoms = document.getString("symptom").toString()
+                    //showToast(symptoms)
                 }
             // Populate the card view with the relevant data
             val entryTextView: TextView = cardView.findViewById(R.id.entryTextView)
@@ -67,5 +69,8 @@ class FilesActivity : AppCompatActivity() {
 
             cardLayout.addView(cardView)
         }
+    }
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }

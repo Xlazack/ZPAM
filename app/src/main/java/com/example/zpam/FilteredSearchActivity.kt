@@ -24,7 +24,9 @@ class FilteredSearchActivity : AppCompatActivity() {
         setContentView(R.layout.activity_wybor_lekarza_filtered)
 
         val entryId = intent.getStringExtra("entryId")!!
-        val symptom = intent.getStringExtra("symptoms")!!
+        val symptom = intent.getStringExtra("symptom")!!
+
+        showToast(symptom)
 
         userList = mutableListOf<User>()
 
@@ -63,8 +65,10 @@ class FilteredSearchActivity : AppCompatActivity() {
                                 val surname = userDocument.getString("userSurname")
                                 val userBio = userDocument.getString("userBio")
                                 val selectedOptions = doctorDocument.get("selectedOptions") as? List<String>
+                                //showToast(selectedOptions.toString())
 
                                 if (name != null && surname != null && userBio != null && selectedOptions != null && selectedOptions.contains(symptom)) {
+                                    showToast(selectedOptions.toString() + symptom)
                                     User(name, surname, userBio)
                                 } else {
                                     null
