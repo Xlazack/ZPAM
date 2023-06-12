@@ -77,6 +77,7 @@ class LoginDoctorActivity : AppCompatActivity() {
                     }
                 } else {
                     // Dokument nie istnieje
+                    showToast("Doktor nie istnieje")
                 }
             }
             .addOnFailureListener { exception ->

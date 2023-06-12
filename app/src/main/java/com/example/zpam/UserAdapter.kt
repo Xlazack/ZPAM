@@ -1,10 +1,12 @@
 package com.example.zpam
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
@@ -37,12 +39,18 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
         private val specializationTextView: TextView = itemView.findViewById(R.id.specializationTextView)
 
         fun bind(user: User) {
-            Glide.with(itemView.context)
+            /*Glide.with(itemView.context)
                 .load(user.imageUrl)
                 .placeholder(R.drawable.no_foto)
-                .into(userImageView)
+                .into(userImageView)*/
             usernameTextView.text = user.name
             specializationTextView.text = user.Surname
+
+            itemView.setOnClickListener {
+                val intent = Intent(itemView.context, WybranyLekarzActivity::class.java)
+                //intent.putExtra("entryId", user.id)  // Przekazanie id użytkownika do nowej aktywności
+                itemView.context.startActivity(intent)
+            }
         }
     }
 }
