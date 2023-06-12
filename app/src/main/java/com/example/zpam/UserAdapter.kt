@@ -42,7 +42,7 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
                 .placeholder(R.drawable.no_foto)
                 .into(userImageView)
             usernameTextView.text = user.name
-            specializationTextView.text = user.specialization
+            specializationTextView.text = user.Surname
         }
     }
 }

@@ -33,7 +33,8 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class Search2 : AppCompatActivity() {
 
@@ -56,19 +57,20 @@ class Search2 : AppCompatActivity() {
             recyclerView.adapter = adapter
 
             // Inicjalizacja Firebase Firestore
-            val db = FirebaseFirestore.getInstance()
+            val db = Firebase.firestore
 
             // Pobieranie danych użytkowników z Firestore
-            db.collection("users")
+            db.collection("Doctors")
                 .get()
                 .addOnSuccessListener { result ->
                     val userList = mutableListOf<User>()
-                    for (document in result) {
-                        val name = document.getString("name")
-                        val specialization = document.getString("specialization")
-                        val imageUrl = document.getString("imageUrl")
-                        if (name != null && specialization != null && imageUrl != null) {
-                            val user = User(name, specialization, imageUrl)
+                    for (doctorID in result) {
+                        val name = db.collection("Doctors").document(doctorID.toString()).collection("userData").document("data").getString("userBio")
+                        val surname = db.collection("Doctors").document(doctorID.toString()).collection("userData").document("data").getString("userSurname")
+                        val userBio = db.collection("Doctors").document(doctorID.toString()).collection("userData").document("data").getString("userBio")
+                        val imageUrl = doctorID.getString("imageUrl")
+                        if (name != null && surname != null && userBio != null && imageUrl != null) {
+                            val user = User(name.toString(), surname.toString(), userBio.toString(), imageUrl)
                             userList.add(user)
                         }
                     }
@@ -79,3 +81,7 @@ class Search2 : AppCompatActivity() {
                 }
         }
     }}
+
+private fun <DocumentReference> DocumentReference.getString(s: String) {
+
+}
