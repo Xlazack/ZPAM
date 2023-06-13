@@ -1,30 +1,3 @@
-//package com.example.zpam
-//
-//import android.annotation.SuppressLint
-//import android.content.Intent
-//import android.os.Bundle
-//import android.widget.Button
-//import androidx.appcompat.app.AppCompatActivity
-//import com.google.firebase.firestore.FirebaseFirestore;
-//import com.google.firebase.firestore.QueryDocumentSnapshot;
-//import com.google.firebase.firestore.QuerySnapshot;
-//
-//class Search2 : AppCompatActivity(){
-//
-//    @SuppressLint("WrongViewCast")
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_wybor_lekarza)
-//
-//        val wybierzLekarza = findViewById<Button>(R.id.view2)
-//        wybierzLekarza.setOnClickListener {
-//            val intent = Intent(this, SearchActivity::class.java)
-//            startActivity(intent)
-//        }
-//    }
-//}
-
-
 package com.example.zpam
 
 import android.content.Intent
@@ -74,9 +47,10 @@ class Search2 : AppCompatActivity() {
                         .addOnSuccessListener { document ->
                             val name = document.getString("userName")
                             val surname = document.getString("userSurname")
-                            val userBio = document.getString("userBio")
-                            if (name != null && surname != null && userBio != null) {
-                                val user = User(name, surname, userBio)
+   //                         val userBio = document.getString("userBio")
+                            val address = document.getString("userAddress")
+                            if (name != null && surname != null && address != null) {
+                                val user = User(name, surname, address)
                                 userList.add(user)
                             }
                             // jeśli to jest ostatni dokument, zaktualizuj adapter

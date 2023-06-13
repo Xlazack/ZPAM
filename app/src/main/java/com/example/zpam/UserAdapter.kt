@@ -37,6 +37,7 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
         private val userImageView: ImageView = itemView.findViewById(R.id.userImageView)
         private val usernameTextView: TextView = itemView.findViewById(R.id.usernameTextView)
         private val specializationTextView: TextView = itemView.findViewById(R.id.specializationTextView)
+        private val doctorAddressTextView: TextView = itemView.findViewById(R.id.doctor_address)
 
         fun bind(user: User) {
             /*Glide.with(itemView.context)
@@ -45,6 +46,7 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
                 .into(userImageView)*/
             usernameTextView.text = user.name
             specializationTextView.text = user.Surname
+            doctorAddressTextView.text = user.Address
 
             itemView.setOnClickListener {
                 val intent = Intent(itemView.context, WybranyLekarzActivity::class.java)
