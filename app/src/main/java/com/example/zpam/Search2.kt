@@ -23,8 +23,8 @@ class Search2 : AppCompatActivity() {
 
         userList = mutableListOf<User>()
 
-        val wybierzLekarza = findViewById<Button>(R.id.settings_backButton)
-        wybierzLekarza.setOnClickListener {
+        val backButton = findViewById<Button>(R.id.settings_backButton)
+        backButton.setOnClickListener {
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }

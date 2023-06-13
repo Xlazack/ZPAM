@@ -1,12 +1,12 @@
 package com.example.zpam
 
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
@@ -77,7 +77,6 @@ class LoginDoctorActivity : AppCompatActivity() {
                     }
                 } else {
                     // Dokument nie istnieje
-                    showToast("Doktor nie istnieje")
                 }
             }
             .addOnFailureListener { exception ->
