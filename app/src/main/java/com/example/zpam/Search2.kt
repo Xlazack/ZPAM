@@ -49,8 +49,9 @@ class Search2 : AppCompatActivity() {
                             val surname = document.getString("userSurname")
    //                         val userBio = document.getString("userBio")
                             val address = document.getString("userAddress")
-                            if (name != null && surname != null && address != null) {
-                                val user = User(name, surname, address)
+                            val mail = document.getString("userEmail")
+                            if (name != null && surname != null && address != null && mail != null) {
+                                val user = User(name, surname, address, mail)
                                 userList.add(user)
                             }
                             // jeśli to jest ostatni dokument, zaktualizuj adapter
