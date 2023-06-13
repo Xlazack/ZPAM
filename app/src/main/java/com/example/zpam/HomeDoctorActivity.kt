@@ -15,5 +15,11 @@ class HomeDoctorActivity : AppCompatActivity() {
             val intent = Intent(this, QualificationsActivity::class.java)
             startActivity(intent)
         }
+
+        val DoctorData = findViewById<Button>(R.id.homeDoctor_userData)
+        DoctorData.setOnClickListener {
+            val intent = Intent(this, DoctorDataActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

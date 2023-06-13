@@ -29,6 +29,9 @@
             android:name=".QualificationsActivity"
             android:exported="false" />
         <activity
+            android:name=".DoctorDataActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeDoctorActivity"
             android:exported="false" />
         <activity
