@@ -63,13 +63,15 @@ class FilteredSearchActivity : AppCompatActivity() {
                             if (task.isSuccessful && userDocument != null && doctorDocument != null) {
                                 val name = userDocument.getString("userName")
                                 val surname = userDocument.getString("userSurname")
-                                val userBio = userDocument.getString("userBio")
+                                // val userBio = document.getString("userBio")
+                                val address = userDocument.getString("userAddress")
+                                val mail = userDocument.getString("userEmail")
                                 val selectedOptions = doctorDocument.get("selectedOptions") as? List<String>
                                 //showToast(selectedOptions.toString())
 
-                                if (name != null && surname != null && userBio != null && selectedOptions != null && selectedOptions.contains(symptom)) {
+                                if (name != null && surname != null && address != null && mail != null && selectedOptions != null && selectedOptions.contains(symptom)) {
                                     showToast(selectedOptions.toString() + symptom)
-                                    User(name, surname, userBio)
+                                    User(name, surname, address, mail)
                                 } else {
                                     null
                                 }
