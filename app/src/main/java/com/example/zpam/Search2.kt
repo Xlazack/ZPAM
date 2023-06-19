@@ -50,7 +50,7 @@ class Search2 : AppCompatActivity() {
    //                         val userBio = document.getString("userBio")
                             val address = document.getString("userAddress")
                             val mail = document.getString("userEmail")
-                            if (name != null && surname != null && address != null && mail != null) {
+                            if (name != null && surname != null && address != null && mail != null ) {
                                 val user = User(name, surname, address, mail)
                                 userList.add(user)
                             }
