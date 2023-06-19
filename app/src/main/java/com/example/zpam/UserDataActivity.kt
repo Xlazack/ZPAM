@@ -22,6 +22,8 @@ class UserDataActivity : AppCompatActivity() {
     private lateinit var emailEditText: EditText
     private lateinit var phoneEditText: EditText
     private lateinit var addressEditText: EditText
+    private lateinit var longitude: EditText
+    private lateinit var altitude: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -95,7 +97,7 @@ class UserDataActivity : AppCompatActivity() {
             "userPesel" to PESELValue,
             "userEmail" to emailValue,
             "userPhone" to phoneValue,
-            "userAddress" to addressValue
+            "userAddress" to addressValue,
         )
 
         userRef.update(userDataUpdates)

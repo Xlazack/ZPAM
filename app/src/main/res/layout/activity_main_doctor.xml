@@ -12,8 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:background="@drawable/background_text_purple_button_home"
-        android:text="Przejdź do logowania"
+        android:background="@drawable/background_text_light_green"
+        android:text="Witaj użytkowniku - Menu Lekarza"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,9 +21,10 @@
 
     <Button
         android:id="@+id/main_doctor_login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/_250pxh"
+        android:layout_height="@dimen/_75pxh"
         android:text="@string/login"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,10 +32,11 @@
 
     <Button
         android:id="@+id/main_doctor_register_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/_250pxh"
+        android:layout_height="@dimen/_75pxh"
         android:text="Zarejestruj"
-        app:layout_constraintBottom_toTopOf="@+id/main_isDoctorButton"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/main_doctor_isDoctorButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_doctor_login_button" />

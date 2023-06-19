@@ -21,5 +21,11 @@ class SettingsActivity : AppCompatActivity() {
             val intent = Intent(this, UserDataActivity::class.java)
             startActivity(intent)
         }
+
+        val chooseAddress = findViewById<Button>(R.id.chooseAddressButton)
+        chooseAddress.setOnClickListener {
+            val intent = Intent(this, ChooseAddressFromMapActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
