@@ -14,14 +14,14 @@ class Search2 : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: UserAdapter
-    private lateinit var userList: MutableList<User>
+    private lateinit var userList: MutableList<Doctor>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_wybor_lekarza)
 
-        userList = mutableListOf<User>()
+        userList = mutableListOf<Doctor>()
 
         val backButton = findViewById<Button>(R.id.settings_backButton)
         backButton.setOnClickListener {
@@ -51,7 +51,7 @@ class Search2 : AppCompatActivity() {
                             val address = document.getString("userAddress")
                             val mail = document.getString("userEmail")
                             if (name != null && surname != null && address != null && mail != null) {
-                                val user = User(name, surname, address, mail)
+                                val user = Doctor(doctorID.id,name, surname, address, mail)
                                 userList.add(user)
                             }
                             // jeśli to jest ostatni dokument, zaktualizuj adapter

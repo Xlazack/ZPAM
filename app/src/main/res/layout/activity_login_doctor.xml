@@ -26,12 +26,13 @@
         android:layout_width="@dimen/_250pxh"
         android:layout_height="@dimen/_75pxh"
         android:layout_marginTop="64dp"
+        android:layout_marginBottom="40dp"
         android:backgroundTint="#FBF7F7"
         android:ems="10"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/password_text"
+        app:layout_constraintBottom_toTopOf="@+id/login_doctor_password_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_doctor_login_textView" />
@@ -77,5 +78,15 @@
         android:layout_height="wrap_content"
         android:text="Dodaj słowa klucze"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/loginDoctor_notDoctorButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/is_not_a_doctor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

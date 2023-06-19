@@ -24,17 +24,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/main_doctor_register_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/main_doctor_logowanie_textView" />
 
     <Button
         android:id="@+id/main_doctor_register_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Zarejestruj"
-        app:layout_constraintBottom_toTopOf="@+id/main_isDoctorButton"
+        app:layout_constraintBottom_toTopOf="@+id/main_doctor_isDoctorButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_doctor_login_button" />

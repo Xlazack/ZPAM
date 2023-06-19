@@ -30,21 +30,11 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/ustawienia1"
+                android:id="@+id/chooseAddressButton"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
                 android:backgroundTint="#FFFFFF"
                 android:text="Dodaj adres"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                app:iconTint="@color/white" />
-
-            <Button
-                android:id="@+id/ustawienia2"
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:backgroundTint="#FFFFFF"
-                android:text="Powiadomienia"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:iconTint="@color/white" />
@@ -55,36 +45,6 @@
                 android:layout_height="90dp"
                 android:backgroundTint="#FFFFFF"
                 android:text="Zmień dane osobowe"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                app:iconTint="@color/white" />
-
-            <Button
-                android:id="@+id/ustawienia4"
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:backgroundTint="#FFFFFF"
-                android:text="Inne"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                app:iconTint="@color/white" />
-
-            <Button
-                android:id="@+id/ustawienia6"
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:backgroundTint="#FFFFFF"
-                android:text="Inne"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                app:iconTint="@color/white" />
-
-            <Button
-                android:id="@+id/ustawienia7"
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:backgroundTint="#FFFFFF"
-                android:text="Usuń konto"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:iconTint="@color/white" />
