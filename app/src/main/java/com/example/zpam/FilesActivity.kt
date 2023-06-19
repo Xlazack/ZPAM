@@ -58,7 +58,9 @@ class FilesActivity : AppCompatActivity() {
                 }
             // Populate the card view with the relevant data
             val entryTextView: TextView = cardView.findViewById(R.id.entryTextView)
-            entryTextView.text = "Entry ID: $entryId"
+            entryTextView.text = "Plik: $entryId"
+            val secondEntryTextView: TextView = cardView.findViewById(R.id.secondEntryTextView)
+            entryTextView.text = symptoms
 
             cardView.setOnClickListener {
                 val intent = Intent(this, SymptomEntryDetailsActivity::class.java)

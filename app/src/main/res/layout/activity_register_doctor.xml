@@ -49,8 +49,8 @@
 
     <Button
         android:id="@+id/register_doctor_registerButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/_250pxh"
+        android:layout_height="@dimen/_75pxh"
         android:text="@string/register"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/register_doctor_loginButton"
@@ -60,8 +60,8 @@
 
     <Button
         android:id="@+id/register_doctor_loginButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/_250pxh"
+        android:layout_height="@dimen/_75pxh"
         android:text="@string/back_to_login"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
