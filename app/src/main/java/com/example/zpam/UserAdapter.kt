@@ -13,8 +13,7 @@ import com.bumptech.glide.Glide
 
 class UserAdapter : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
-    private var userList: List<Doctor> = emptyList()
-    private var userIds: List<String> = emptyList()
+    private var userList: List<User> = emptyList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_user, parent, false)
@@ -30,14 +29,9 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
         return userList.size
     }
 
-    fun setUserList(userList: List<Doctor>, userIds: List<String>) {
+    fun setUserList(userList: List<User>) {
         this.userList = userList
-        this.userIds = userIds
         notifyDataSetChanged()
-    }
-
-    fun getUserId(position: Int): String {
-        return userIds[position]
     }
 
     class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -55,7 +49,7 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
             }
         }
 
-        fun bind(user: Doctor) {
+        fun bind(user: User) {
             /*Glide.with(itemView.context)
                 .load(user.imageUrl)
                 .placeholder(R.drawable.no_foto)
@@ -68,7 +62,7 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
             itemView.setOnClickListener {
                 val intent = Intent(itemView.context, WybranyLekarzActivity::class.java)
-                intent.putExtra("doctorId", user.id)  // Przekazanie id użytkownika do nowej aktywności
+                //intent.putExtra("entryId", user.id)  // Przekazanie id użytkownika do nowej aktywności
                 itemView.context.startActivity(intent)
             }
         }

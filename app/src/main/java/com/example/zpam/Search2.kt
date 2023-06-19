@@ -14,14 +14,14 @@ class Search2 : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: UserAdapter
-    private lateinit var userList: MutableList<Doctor>
+    private lateinit var userList: MutableList<User>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_wybor_lekarza)
 
-        userList = mutableListOf<Doctor>()
+        userList = mutableListOf<User>()
 
         val backButton = findViewById<Button>(R.id.settings_backButton)
         backButton.setOnClickListener {
@@ -47,11 +47,11 @@ class Search2 : AppCompatActivity() {
                         .addOnSuccessListener { document ->
                             val name = document.getString("userName")
                             val surname = document.getString("userSurname")
-   //                         val userBio = document.getString("userBio")
+                            //                         val userBio = document.getString("userBio")
                             val address = document.getString("userAddress")
                             val mail = document.getString("userEmail")
-                            if (name != null && surname != null && address != null && mail != null) {
-                                val user = Doctor(doctorID.id,name, surname, address, mail)
+                            if (name != null && surname != null && address != null && mail != null ) {
+                                val user = User(name, surname, address, mail)
                                 userList.add(user)
                             }
                             // jeśli to jest ostatni dokument, zaktualizuj adapter
@@ -66,7 +66,7 @@ class Search2 : AppCompatActivity() {
             }
             .addOnFailureListener { exception ->
                 // Obsługa błędu
-        }
+            }
     }
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()

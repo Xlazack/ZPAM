@@ -16,7 +16,7 @@ class FilteredSearchActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: UserAdapter
-    private lateinit var userList: MutableList<Doctor>
+    private lateinit var userList: MutableList<User>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +28,7 @@ class FilteredSearchActivity : AppCompatActivity() {
 
         showToast(symptom)
 
-        userList = mutableListOf<Doctor>()
+        userList = mutableListOf<User>()
 
         val backButton = findViewById<Button>(R.id.settings_backButton)
         backButton.setOnClickListener {
@@ -71,7 +71,7 @@ class FilteredSearchActivity : AppCompatActivity() {
 
                                 if (name != null && surname != null && address != null && mail != null && selectedOptions != null && selectedOptions.contains(symptom)) {
                                     showToast(selectedOptions.toString() + symptom)
-                                    Doctor(doctorID.id,name, surname, address, mail)
+                                    User(name, surname, address, mail)
                                 } else {
                                     null
                                 }
@@ -81,10 +81,9 @@ class FilteredSearchActivity : AppCompatActivity() {
                         }
                 }
 
-                Tasks.whenAllSuccess<Doctor>(tasks)
+                Tasks.whenAllSuccess<User>(tasks)
                     .addOnSuccessListener { users ->
-                        val userIds = users.map { it.id }
-                        adapter.setUserList(users.filterNotNull(), userIds)
+                        adapter.setUserList(users.filterNotNull())
                     }
                     .addOnFailureListener { exception ->
                         // Obsługa błędu
@@ -92,7 +91,7 @@ class FilteredSearchActivity : AppCompatActivity() {
             }
             .addOnFailureListener { exception ->
                 // Obsługa błędu
-        }
+            }
 
 
 

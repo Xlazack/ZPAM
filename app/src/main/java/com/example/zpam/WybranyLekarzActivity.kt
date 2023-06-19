@@ -21,8 +21,6 @@ class WybranyLekarzActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bio_lekarza)
 
-        val entryId = intent.getStringExtra("doctorId")!!
-
         val backButton = findViewById<Button>(R.id.settings_backButton4)
         backButton.setOnClickListener {
             val intent = Intent(this, Search2::class.java)
@@ -41,8 +39,8 @@ class WybranyLekarzActivity : AppCompatActivity() {
                             findViewById<TextView>(R.id.editTextTextMultiLine).setText(bioText)
 
                         }
-                    }
                 }
+            }
             .addOnFailureListener { exception ->
                 // Obsługa błędu, jeśli wystąpił problem z pobraniem danych
             }
