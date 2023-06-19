@@ -83,7 +83,8 @@ class FilteredSearchActivity : AppCompatActivity() {
 
                 Tasks.whenAllSuccess<Doctor>(tasks)
                     .addOnSuccessListener { users ->
-                        adapter.setUserList(users.filterNotNull())
+                        val userIds = users.map { it.id }
+                        adapter.setUserList(users.filterNotNull(), userIds)
                     }
                     .addOnFailureListener { exception ->
                         // Obsługa błędu
