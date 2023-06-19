@@ -54,6 +54,15 @@ class LoginActivity : AppCompatActivity() {
         registerButton.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
+            finish()
+        }
+
+        // Obsługa kliknięcia przycisku przejścia do rejestrowania
+        val isDoctor = findViewById<Button>(R.id.activity_login_isDoctorButton)
+        isDoctor.setOnClickListener {
+            val intent = Intent(this, MainDoctorActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 

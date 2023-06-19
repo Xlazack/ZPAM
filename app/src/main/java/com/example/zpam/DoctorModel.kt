@@ -2,7 +2,7 @@ package com.example.zpam
 
 import java.util.HashMap
 
-data class UserModel(
+data class DoctorModel(
     var userName: String? = null,
     var userSurname: String? = null,
     var userBirthDate: String? = null,
@@ -11,8 +11,7 @@ data class UserModel(
     var userPhone: String? = null,
     var userAddress: String? = null,
     var userIsDoctor: Boolean? = null,
-    var userAltitude: Double = 0.0,
-    var userLongitude: Double = 0.0
+    var userBio: String? = null
 ) {
     val userData = hashMapOf(
         "userName" to userName,
@@ -23,8 +22,7 @@ data class UserModel(
         "userPhone" to userPhone,
         "userAddress" to userAddress,
         "userIsDoctor" to userIsDoctor,
-        "userAltitude" to userAltitude,
-        "userLongitude" to userLongitude
+        "userBio" to userBio,
     )
     fun show(): HashMap<String, out Any?> {
         return userData

@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -17,6 +18,9 @@
         android:theme="@style/Theme.ZPAM"
         tools:targetApi="31">
         <activity
+            android:name=".ChooseAddressFromMapActivity"
+            android:exported="false" />
+        <activity
             android:name=".SymptomEntryDetailsActivity"
             android:exported="false" />
         <activity
@@ -27,6 +31,9 @@
             android:exported="false" />
         <activity
             android:name=".QualificationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DoctorDataActivity"
             android:exported="false" />
         <activity
             android:name=".HomeDoctorActivity"
@@ -57,7 +64,7 @@
             android:exported="false" />
         <activity
             android:name=".Search2"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".HomeActivity"
             android:exported="false" />
@@ -73,15 +80,20 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-
-
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCvZWR5d0tjkj5AELBiu-1jmyDoKJdXTnU" />
+
+        <uses-library
+            android:name="com.google.android.maps"
+            android:required="false" />
     </application>
 
 </manifest>

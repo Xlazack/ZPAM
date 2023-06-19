@@ -16,7 +16,7 @@ class FilteredSearchActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: UserAdapter
-    private lateinit var userList: MutableList<User>
+    private lateinit var userList: MutableList<Doctor>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +28,7 @@ class FilteredSearchActivity : AppCompatActivity() {
 
         showToast(symptom)
 
-        userList = mutableListOf<User>()
+        userList = mutableListOf<Doctor>()
 
         val backButton = findViewById<Button>(R.id.settings_backButton)
         backButton.setOnClickListener {
@@ -63,13 +63,15 @@ class FilteredSearchActivity : AppCompatActivity() {
                             if (task.isSuccessful && userDocument != null && doctorDocument != null) {
                                 val name = userDocument.getString("userName")
                                 val surname = userDocument.getString("userSurname")
-                                val userBio = userDocument.getString("userBio")
+                                // val userBio = document.getString("userBio")
+                                val address = userDocument.getString("userAddress")
+                                val mail = userDocument.getString("userEmail")
                                 val selectedOptions = doctorDocument.get("selectedOptions") as? List<String>
                                 //showToast(selectedOptions.toString())
 
-                                if (name != null && surname != null && userBio != null && selectedOptions != null && selectedOptions.contains(symptom)) {
+                                if (name != null && surname != null && address != null && mail != null && selectedOptions != null && selectedOptions.contains(symptom)) {
                                     showToast(selectedOptions.toString() + symptom)
-                                    User(name, surname, userBio)
+                                    Doctor(doctorID.id,name, surname, address, mail)
                                 } else {
                                     null
                                 }
@@ -79,7 +81,7 @@ class FilteredSearchActivity : AppCompatActivity() {
                         }
                 }
 
-                Tasks.whenAllSuccess<User>(tasks)
+                Tasks.whenAllSuccess<Doctor>(tasks)
                     .addOnSuccessListener { users ->
                         adapter.setUserList(users.filterNotNull())
                     }

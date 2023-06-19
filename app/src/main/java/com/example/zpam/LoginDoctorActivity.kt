@@ -62,6 +62,13 @@ class LoginDoctorActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+        // Powrót do okna main dla użytkownika
+        val notADoctorButton = findViewById<Button>(R.id.loginDoctor_notDoctorButton)
+        notADoctorButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     private fun fetchUserDataFromFirestore() {
