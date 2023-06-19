@@ -7,6 +7,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.DocumentSnapshot
@@ -18,12 +19,15 @@ class FilesActivity : AppCompatActivity() {
 
     private lateinit var userFilesRef: CollectionReference
     private lateinit var symptoms: String
+    private lateinit var auth: FirebaseAuth
+    private lateinit var userId: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_files)
         // Step 1: Fetch symptom entries from Firestore
         val firestore = Firebase.firestore
-        val userId = Firebase.auth.currentUser!!.uid
+        auth = Firebase.auth
+        userId = auth.currentUser!!.uid
         userFilesRef = firestore.collection("Users").document(userId).collection("userFiles")
 
         userFilesRef.get()
@@ -62,7 +66,8 @@ class FilesActivity : AppCompatActivity() {
                     cardView.setOnClickListener {
                         val intent = Intent(this, SymptomEntryDetailsActivity::class.java)
                         intent.putExtra("entryId", entry.id)
-                        intent.putExtra("symptoms", symptoms)
+                        intent.putExtra("symptom", symptoms)
+                        intent.putExtra("userId", userId)
                         startActivity(intent)
                     }
 

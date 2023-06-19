@@ -13,7 +13,7 @@ import com.google.firebase.ktx.Firebase
 class Search2 : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: UserAdapter
+    private lateinit var adapter: UserAdapter2
     private lateinit var userList: MutableList<Doctor>
 
 
@@ -29,7 +29,7 @@ class Search2 : AppCompatActivity() {
             startActivity(intent)
         }
         recyclerView = findViewById(R.id.recyclerView)
-        adapter = UserAdapter()
+        adapter = UserAdapter2()
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter

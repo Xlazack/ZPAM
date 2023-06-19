@@ -25,6 +25,7 @@ class FilteredSearchActivity : AppCompatActivity() {
 
         val entryId = intent.getStringExtra("entryId")!!
         val symptom = intent.getStringExtra("symptom")!!
+        val userId = intent.getStringExtra("userId")!!
 
         showToast(symptom)
 
@@ -36,7 +37,7 @@ class FilteredSearchActivity : AppCompatActivity() {
             startActivity(intent)
         }
         recyclerView = findViewById(R.id.recyclerView)
-        adapter = UserAdapter()
+        adapter = UserAdapter(userId, entryId)
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter

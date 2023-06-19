@@ -104,7 +104,7 @@
             app:layout_constraintTop_toTopOf="@+id/okno_1" />
 
 
-        <EditText
+        <TextView
             android:id="@+id/editTextTextMultiLine"
             android:layout_width="270dp"
             android:layout_height="225dp"
@@ -119,7 +119,7 @@
             app:layout_constraintTop_toTopOf="@+id/okno_1"
             app:layout_constraintVertical_bias="0.469" />
 
-        <EditText
+        <TextView
             android:id="@+id/editTextText"
             android:layout_width="218dp"
             android:layout_height="55dp"
@@ -134,11 +134,11 @@
             app:layout_constraintVertical_bias="0.84" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/chooseThisDoctorButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/holo_green_dark"
-            android:text="SPRAWDZ TERMINY"
+            android:text="WYBIERZ TEGO LEKARZA"
             app:layout_constraintBottom_toBottomOf="@+id/okno_1"
             app:layout_constraintEnd_toEndOf="@+id/okno_1"
             app:layout_constraintStart_toStartOf="@+id/okno_1"
