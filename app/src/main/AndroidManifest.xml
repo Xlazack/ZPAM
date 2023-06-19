@@ -21,6 +21,9 @@
             android:name=".ChooseAddressFromMapActivity"
             android:exported="false" />
         <activity
+            android:name=".SymptomEntryDetailsForDoctorActivity"
+            android:exported="false" />
+        <activity
             android:name=".CasesActivity"
             android:exported="false" />
         <activity

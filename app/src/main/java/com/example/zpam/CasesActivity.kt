@@ -59,6 +59,7 @@ class CasesActivity : AppCompatActivity() {
             userFileId = entry.getString("userId").toString()
             entryId = entry.getString("entryId").toString()
 
+
             userFilesRef.document(userFileId).collection("userData").document("data").get()
                 .addOnSuccessListener() {documentSnapshot ->
                     userName = documentSnapshot.getString("userName")!! + " " + documentSnapshot.getString("userSurname")!!
@@ -77,10 +78,10 @@ class CasesActivity : AppCompatActivity() {
                             secondEntryTextView.text = symptoms
 
                             cardView.setOnClickListener {
-                                val intent = Intent(this, SymptomEntryDetailsActivity::class.java)
-                                intent.putExtra("entryId", entry.id)
+                                val intent = Intent(this, SymptomEntryDetailsForDoctorActivity::class.java)
+                                intent.putExtra("entryId", entryId)
                                 intent.putExtra("symptom", symptoms)
-                                intent.putExtra("userId", userId)
+                                intent.putExtra("userId", userFileId)
                                 startActivity(intent)
                             }
 
