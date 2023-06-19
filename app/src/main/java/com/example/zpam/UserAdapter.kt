@@ -4,6 +4,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
@@ -39,6 +40,14 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
         private val specializationTextView: TextView = itemView.findViewById(R.id.specializationTextView)
         private val doctorAddressTextView: TextView = itemView.findViewById(R.id.doctor_address)
         private val doctorPhoneTextView: TextView = itemView.findViewById(R.id.doctor_phone)
+        private val doctorWybieramButton: Button = itemView.findViewById(R.id.doctor_wybieram)
+
+        init {
+            doctorWybieramButton.setOnClickListener {
+                val intent = Intent(itemView.context, WybranyLekarzActivity::class.java)
+                itemView.context.startActivity(intent)
+            }
+        }
 
         fun bind(user: Doctor) {
             /*Glide.with(itemView.context)
