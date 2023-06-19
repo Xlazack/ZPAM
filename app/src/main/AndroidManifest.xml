@@ -53,6 +53,9 @@
             android:name=".NewFileActivity"
             android:exported="false" />
         <activity
+            android:name=".WybranyLekarzActivity"
+            android:exported="false" />
+        <activity
             android:name=".UserDataActivity"
             android:exported="false" />
         <activity

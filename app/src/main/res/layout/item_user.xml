@@ -53,4 +53,13 @@
         android:textSize="14sp"
         android:text="Specialization" />
 
+    <Button
+        android:id="@+id/doctor_wybieram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/specializationTextView"
+        android:layout_marginTop="8dp"
+        android:text="WYBIERAM"
+        android:layout_alignStart="@id/specializationTextView" />
+
 </RelativeLayout>
