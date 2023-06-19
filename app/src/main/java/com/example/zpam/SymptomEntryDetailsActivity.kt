@@ -33,6 +33,30 @@ class SymptomEntryDetailsActivity : AppCompatActivity() {
             .addOnSuccessListener { documentSnapshot ->
                 val symptomLayout: LinearLayout = findViewById(R.id.symptomLayout)
                 symptom = documentSnapshot.getString("symptom").toString()
+                val doctorId = documentSnapshot.getString("chosenDoctor")
+
+                if (doctorId != null) {
+                    firestore.collection("Doctors").document(doctorId).collection("userData").document("data").get()
+                        .addOnSuccessListener { doctorDocument ->
+                            val doctorName = doctorDocument.getString("userName") + " " + doctorDocument.getString("userSurname")
+                            val doctorTextView = TextView(this)
+                            doctorTextView.text = "Doctor: $doctorName"
+                            doctorTextView.textSize = 18f
+                            doctorTextView.setPadding(16)
+                            doctorTextView.setOnClickListener {
+                                val intent = Intent(this, WybranyLekarzActivity::class.java)
+                                intent.putExtra("doctorId", doctorId)
+                                intent.putExtra("userId", userId) // przekazuje userId
+                                intent.putExtra("entryId", entryId) // przekazuje entryId
+                                startActivity(intent)
+                            }
+                            symptomLayout.addView(doctorTextView)
+                        }
+                        .addOnFailureListener { exception ->
+                            // Handle error fetching doctor data
+                        }
+                }
+
                 val symptomTextView = TextView(this)
                 symptomTextView.text = "Symptom: $symptom"
                 symptomTextView.textSize = 18f
