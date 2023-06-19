@@ -10,7 +10,9 @@ data class UserModel(
     var userEmail: String? = null,
     var userPhone: String? = null,
     var userAddress: String? = null,
-    var userIsDoctor: Boolean? = null
+    var userIsDoctor: Boolean? = null,
+    var userAltitude: Double = 0.0,
+    var userLongitude: Double = 0.0
 ) {
     val userData = hashMapOf(
         "userName" to userName,
@@ -21,6 +23,8 @@ data class UserModel(
         "userPhone" to userPhone,
         "userAddress" to userAddress,
         "userIsDoctor" to userIsDoctor,
+        "userAltitude" to userAltitude,
+        "userLongitude" to userLongitude
     )
     fun show(): HashMap<String, out Any?> {
         return userData
